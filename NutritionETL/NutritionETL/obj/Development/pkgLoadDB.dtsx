@@ -7,7 +7,7 @@
   DTS:CreatorName="IDEA-PC\Zach"
   DTS:DTSID="{317713DA-590A-45C7-8C94-487E2FBDFAEF}"
   DTS:ExecutableType="SSIS.Package.3"
-  DTS:LastModifiedProductVersion="11.0.5058.0"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkgLoadDB"
   DTS:PackageType="5"

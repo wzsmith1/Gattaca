@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>NutritionETL</Name>
-    <LastWriteTime>2015-01-09T14:13:01.1683908Z</LastWriteTime>
+    <LastWriteTime>2014-12-31T23:07:32.3716143Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>pkgLoadDB.dtsx</Name>
-      <LastWriteTime>2015-01-09T14:28:34.390768Z</LastWriteTime>
+      <LastWriteTime>2015-01-09T14:30:26.6953373Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
