@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">IDEA-PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAu39k6Y9bQEilFtevkAaFxgAAAAACAAAAAAAQZgAAAAEAACAAAAALkUY3dHLFph9bOXDi6jMT8AuDu2tKCzFJ1iYFY73arwAAAAAOgAAAAAIAACAAAAAq/fbVs9+N3zSroDZUyPZeazbfz0lvGNEtiLP2YdsTL5AAAABrHbCHX2ByvoOtGPlHdWmiEQlyhXjcVoKkswRGm/MWtHfKpENkKz+BqdTqzGPYQdbiTS/VXl33bMC1RrSaEJQZHHXE52c8zLYfcpbcKBw9g6b39BPrZLs0pZACgbINuxxVnpl7Fncmf08xnwuROI/6XiE9Nssq/iCN5m4zk6BuwIXQ7ZT2HNn2q2ZmEYeFalBAAAAAO6qN4G4YR0KJXKLn5VWXSUT/oDy3HLfshL2CiYufV4gULM3QIaSyUFVyTnCN6zjNN/jyfD53+LfsKFVBHX9Pfw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMefT7yxZUEmXZPNA91ZXMgAAAAACAAAAAAADZgAAwAAAABAAAACqdtVNKktXrAL03AAtmTq2AAAAAASAAACgAAAAEAAAAC9t29oBrzsx31COIp/GrUSIAAAAOxwBwkAiRHQ89qtHuoxs9ufnuC9A+ex37NjB8wI4lc+wukvrvFY6oRojxeIxWb0/KhDdH+Sldx2H3H2pNcAujFWK0F3KRbP+/m3Xa/YuOz7pVUo1UanKKC1reNgDeT2AbjXfuy9F3hvHgUosTke0CJiISGrGfTcDhRJwoUgirleLcxME7yRxChQAAABI/iA7R/SEplwbcamFMB1Wuz/q7w==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -2435,10 +2435,10 @@
                 <SSIS:Property SSIS:Name="Name">pkgLoadDB</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">52</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">54</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F1B37A44-7BBE-4D88-B04E-550D82B6C993}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7C56082A-12EB-4BA5-B99C-5083CD84F468}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

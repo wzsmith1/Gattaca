@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>NutritionETL</Name>
-    <LastWriteTime>2014-12-31T23:07:32.3716143Z</LastWriteTime>
+    <LastWriteTime>2015-01-09T14:13:01.1683908Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>pkgLoadStaging.dtsx</Name>
-      <LastWriteTime>2014-12-31T23:06:38.3875461Z</LastWriteTime>
+      <LastWriteTime>2015-01-09T14:13:01.259396Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>pkgLoadDB.dtsx</Name>
-      <LastWriteTime>2015-01-09T14:06:29.7301748Z</LastWriteTime>
+      <LastWriteTime>2015-01-09T14:28:34.390768Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
