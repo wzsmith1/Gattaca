@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x007E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Source\Data\sr27asc\DATSRCLN.txt">
+      DTS:ConnectionString="C:\Source\Gattaca\DATA\sr27asc\DATSRCLN.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NDB_No"
-          DTS:DTSID="{5B345F5A-2FD1-4527-9052-0C29894555DD}"
+          DTS:DTSID="{DD7C6AE0-76AB-4F34-A5CD-27F2746E0317}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Nutr_No"
-          DTS:DTSID="{9F73275F-57E3-4767-B041-8208CF959806}"
+          DTS:DTSID="{1DAB65DC-881B-4DB3-A961-43F0E4582945}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="DataSrc_ID"
-          DTS:DTSID="{4C6DF292-36E2-42EB-B9E4-49D867DD01C0}"
+          DTS:DTSID="{009DA1B7-09A0-498A-AED3-D2AFFC938CF7}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

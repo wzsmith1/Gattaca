@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x007E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Source\Data\sr27asc\NUTR_DEF.txt">
+      DTS:ConnectionString="C:\Source\Gattaca\DATA\sr27asc\NUTR_DEF.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Nutr_No"
-          DTS:DTSID="{010E6F9C-8152-4F4A-9769-8C07A0FAD564}"
+          DTS:DTSID="{F3EE63B0-C685-43C3-BF4A-2CE196DF086D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Units"
-          DTS:DTSID="{6C4545C5-C6F6-40EA-B73F-108E19DC00B4}"
+          DTS:DTSID="{CEDFA0BC-001C-4271-9B3D-A50095219989}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Tagname"
-          DTS:DTSID="{2FD8687E-16C6-4D09-9A81-5CFB100A017A}"
+          DTS:DTSID="{0FDE5069-7766-4720-BABD-4B337156A98D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NutrDesc"
-          DTS:DTSID="{47D9B141-D885-4BFE-B021-FF131CE64CC4}"
+          DTS:DTSID="{24B0B516-B54D-470E-81EA-0BC0806805FF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Num_Dec"
-          DTS:DTSID="{89E53BFC-5381-4EB8-96E8-DAF2D5C339D8}"
+          DTS:DTSID="{977A8CEA-00E7-4AF1-AB4C-C34851F4ACBF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -64,7 +64,7 @@
           DTS:DataType="20"
           DTS:TextQualified="True"
           DTS:ObjectName="SR_Order"
-          DTS:DTSID="{F709AEFF-C7E1-4DEE-B858-E7FA8063A8A2}"
+          DTS:DTSID="{157E9114-5FDB-44F2-8D06-FB04DA0A613B}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="pkgLoadDB"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{04FF4CD0-A063-4617-A6AB-00DF00814408}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{F1B37A44-7BBE-4D88-B04E-550D82B6C993}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
@@ -1977,44 +1977,44 @@
           <paths>
             <path
               refId="Package\Extract Staging_Nutrition Stage 1.Paths[Data Conversion Output1]"
-              endId="Package\Extract Staging_Nutrition Stage 1\SQL Server DataSource.Inputs[SQL Server Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Extract Staging_Nutrition Stage 1\Year Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 1.Paths[Data Conversion Output]"
               endId="Package\Extract Staging_Nutrition Stage 1\SQL Server Nutrient.Inputs[SQL Server Destination Input]"
               name="Data Conversion Output"
               startId="Package\Extract Staging_Nutrition Stage 1\Data Conversion.Outputs[Data Conversion Output]" />
             <path
+              refId="Package\Extract Staging_Nutrition Stage 1.Paths[Data Conversion Output]"
+              endId="Package\Extract Staging_Nutrition Stage 1\SQL Server DataSource.Inputs[SQL Server Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Extract Staging_Nutrition Stage 1\Year Conversion.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output2]"
-              endId="Package\Extract Staging_Nutrition Stage 1\Data Conversion.Inputs[Data Conversion Input]"
-              name="OLE DB Source Output"
-              startId="Package\Extract Staging_Nutrition Stage 1\Extract NUT_DATA.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output3]"
-              endId="Package\Extract Staging_Nutrition Stage 1\Eliminate Duplicates 1.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Extract Staging_Nutrition Stage 1\Extract DATA_SRC.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output]"
               endId="Package\Extract Staging_Nutrition Stage 1\SQL Server FoodGroup.Inputs[SQL Server Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Extract Staging_Nutrition Stage 1\Extract FD_GROUP.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output1]"
+              refId="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output3]"
               endId="Package\Extract Staging_Nutrition Stage 1\Eliminate Duplicates 2.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\Extract Staging_Nutrition Stage 1\Extract FOOTNOTE.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Extract Staging_Nutrition Stage 1.Paths[Sort Output]"
-              endId="Package\Extract Staging_Nutrition Stage 1\SQL Server Footnote.Inputs[SQL Server Destination Input]"
-              name="Sort Output"
-              startId="Package\Extract Staging_Nutrition Stage 1\Eliminate Duplicates 2.Outputs[Sort Output]" />
+              refId="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output]"
+              endId="Package\Extract Staging_Nutrition Stage 1\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Staging_Nutrition Stage 1\Extract NUT_DATA.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output1]"
+              endId="Package\Extract Staging_Nutrition Stage 1\Eliminate Duplicates 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Staging_Nutrition Stage 1\Extract DATA_SRC.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 1.Paths[Sort Output1]"
               endId="Package\Extract Staging_Nutrition Stage 1\Year Conversion.Inputs[Data Conversion Input]"
               name="Sort Output"
               startId="Package\Extract Staging_Nutrition Stage 1\Eliminate Duplicates 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 1.Paths[Sort Output]"
+              endId="Package\Extract Staging_Nutrition Stage 1\SQL Server Footnote.Inputs[SQL Server Destination Input]"
+              name="Sort Output"
+              startId="Package\Extract Staging_Nutrition Stage 1\Eliminate Duplicates 2.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3078,14 +3078,14 @@ where [refTable].[Name] = ?</property>
               startId="Package\Extract Staging_Nutrition Stage 2\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 2.Paths[Lookup Match Output1]"
-              endId="Package\Extract Staging_Nutrition Stage 2\Lookup FoodGroupID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 2\Add FdGrp_Desc Column.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 2.Paths[Lookup Match Output]"
               endId="Package\Extract Staging_Nutrition Stage 2\Derived Column.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Extract Staging_Nutrition Stage 2\Lookup FoodGroupID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 2.Paths[Lookup Match Output]"
+              endId="Package\Extract Staging_Nutrition Stage 2\Lookup FoodGroupID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 2\Add FdGrp_Desc Column.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 2.Paths[OLE DB Source Output]"
               endId="Package\Extract Staging_Nutrition Stage 2\Add FdGrp_Desc Column.Inputs[Lookup Input]"
@@ -6234,9 +6234,9 @@ where [refTable].[Nutr_No] = ?</property>
           <paths>
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Derived Column Output2]"
-              endId="Package\Extract Staging_Nutrition Stage 3\SQL Server FoodWeight.Inputs[SQL Server Destination Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\SQL Server FoodNutrientCross.Inputs[SQL Server Destination Input]"
               name="Derived Column Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Convert Seq to INT.Outputs[Derived Column Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Derive IsFortified.Outputs[Derived Column Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Derived Column Output1]"
               endId="Package\Extract Staging_Nutrition Stage 3\SQL Server FoodFootnoteCross.Inputs[SQL Server Destination Input]"
@@ -6244,29 +6244,29 @@ where [refTable].[Nutr_No] = ?</property>
               startId="Package\Extract Staging_Nutrition Stage 3\Derive Footnote Type.Outputs[Derived Column Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Derived Column Output]"
-              endId="Package\Extract Staging_Nutrition Stage 3\SQL Server FoodNutrientCross.Inputs[SQL Server Destination Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\SQL Server FoodWeight.Inputs[SQL Server Destination Input]"
               name="Derived Column Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Derive IsFortified.Outputs[Derived Column Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Convert Seq to INT.Outputs[Derived Column Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output6]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 3.Inputs[Lookup Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 2.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 3.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 2.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output5]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Lookup NutrientID.Inputs[Lookup Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Lookup FootnoteID.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Lookup Nutr_Desc.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 1.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output8]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Convert Seq to INT.Inputs[Derived Column Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Derive Footnote Type.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 3.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Lookup FootnoteID.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output7]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Derive IsFortified.Inputs[Derived Column Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Lookup Nutr_Desc.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Lookup NutrientID.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 2.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output4]"
               endId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 1.Inputs[Lookup Input]"
@@ -6274,29 +6274,29 @@ where [refTable].[Nutr_No] = ?</property>
               startId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 1.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output1]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Lookup FootnoteID.Inputs[Lookup Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Lookup NutrientID.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 1.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Lookup Nutr_Desc.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 2.Inputs[Lookup Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 3.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 2.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 3.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output3]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Lookup Nutr_Desc.Inputs[Lookup Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Derive IsFortified.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 2.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Lookup NutrientID.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output2]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Derive Footnote Type.Inputs[Derived Column Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Convert Seq to INT.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Lookup FootnoteID.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Lookup FoodID 3.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[OLE DB Source Output2]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 3.Inputs[Lookup Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 2.Inputs[Lookup Input]"
               name="OLE DB Source Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Extract WEIGHT.Outputs[OLE DB Source Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Extract NUT_DATA.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[OLE DB Source Output1]"
               endId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 1.Inputs[Lookup Input]"
@@ -6304,9 +6304,9 @@ where [refTable].[Nutr_No] = ?</property>
               startId="Package\Extract Staging_Nutrition Stage 3\Extract FOOTNOTE.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Extract Staging_Nutrition Stage 3.Paths[OLE DB Source Output]"
-              endId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 2.Inputs[Lookup Input]"
+              endId="Package\Extract Staging_Nutrition Stage 3\Lookup Long_Desc 3.Inputs[Lookup Input]"
               name="OLE DB Source Output"
-              startId="Package\Extract Staging_Nutrition Stage 3\Extract NUT_DATA.Outputs[OLE DB Source Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 3\Extract WEIGHT.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -9298,80 +9298,80 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
               name="Data Conversion Output"
               startId="Package\Extract Staging_Nutrition Stage 4\Year Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output10]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 2.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 2.Outputs[Lookup Match Output]" />
-            <path
               refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output9]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup Authors, Title, Journal, Year.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 1.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output8]"
-              endId="Package\Extract Staging_Nutrition Stage 4\SQL Server FoodNutrientDataSourceCross.Inputs[SQL Server Destination Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup DataSourceID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 2.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup Long_Desc 2.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output12]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Year Conversion.Inputs[Data Conversion Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup Authors, Title, Journal, Year.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output11]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup FootnoteID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 2.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output7]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 1.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 1.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output3]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 2.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 2.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output2]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 2.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 2.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output1]"
               endId="Package\Extract Staging_Nutrition Stage 4\SQL Server FoodNutrientFootnoteCross.Inputs[SQL Server Destination Input]"
               name="Lookup Match Output"
               startId="Package\Extract Staging_Nutrition Stage 4\Lookup FootnoteID.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output6]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 1.Inputs[Lookup Input]"
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output8]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 2.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 1.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 2.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output5]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 1.Inputs[Lookup Input]"
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output7]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 2.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 1.Outputs[Lookup Match Output]" />
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 2.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output4]"
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output12]"
               endId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 1.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Extract Staging_Nutrition Stage 4\Lookup Long_Desc 1.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[OLE DB Source Output1]"
-              endId="Package\Extract Staging_Nutrition Stage 4\Lookup Long_Desc 2.Inputs[Lookup Input]"
-              name="OLE DB Source Output"
-              startId="Package\Extract Staging_Nutrition Stage 4\Extract FOOTNOTE.Outputs[OLE DB Source Output]" />
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output11]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 1.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 1.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Extract Staging_Nutrition Stage 4.Paths[OLE DB Source Output]"
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output10]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 1.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 1.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output6]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 1.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 1.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output2]"
+              endId="Package\Extract Staging_Nutrition Stage 4\SQL Server FoodNutrientDataSourceCross.Inputs[SQL Server Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup DataSourceID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output1]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup Authors, Title, Journal, Year.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 1.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 2.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 2.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output5]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup FootnoteID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 2.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output4]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Year Conversion.Inputs[Data Conversion Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup Authors, Title, Journal, Year.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output3]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 2.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Lookup Long_Desc 2.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[OLE DB Source Output1]"
               endId="Package\Extract Staging_Nutrition Stage 4\Lookup Long_Desc 1.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Extract Staging_Nutrition Stage 4\Extract DATSRCLN.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition Stage 4.Paths[OLE DB Source Output]"
+              endId="Package\Extract Staging_Nutrition Stage 4\Lookup Long_Desc 2.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Staging_Nutrition Stage 4\Extract FOOTNOTE.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -9555,7 +9555,19 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
     design-time-name="Package\Extract Staging_Nutrition Stage 1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 1\Extract DATA_SRC"
+          TopLeft="84.3428585928314,87.9058835970077" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 1\Year Conversion"
+          TopLeft="88,278.4" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 1\Eliminate Duplicates 2"
+          TopLeft="701.6,212.8" />
         <NodeLayout
           Size="168,41.6"
           Id="Package\Extract Staging_Nutrition Stage 1\Extract FOOTNOTE"
@@ -9565,13 +9577,13 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
           Id="Package\Extract Staging_Nutrition Stage 1\SQL Server Footnote"
           TopLeft="686.514291056808,310.02352811622" />
         <NodeLayout
-          Size="168,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 1\Extract FD_GROUP"
-          TopLeft="490.857146039301,87.3411762818335" />
+          Size="185.6,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 1\SQL Server FoodGroup"
+          TopLeft="476.000008106232,212.188235431394" />
         <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 1\Eliminate Duplicates 2"
-          TopLeft="701.6,212.8" />
+          Size="168,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 1\Extract NUT_DATA"
+          TopLeft="289.485719229251,88.5647057107577" />
         <NodeLayout
           Size="188.8,41.6"
           Id="Package\Extract Staging_Nutrition Stage 1\SQL Server DataSource"
@@ -9586,96 +9598,46 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
           TopLeft="292.34286213505,321.647061920826" />
         <NodeLayout
           Size="168,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 1\Extract NUT_DATA"
-          TopLeft="289.485719229251,88.5647057107577" />
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 1\Extract DATA_SRC"
-          TopLeft="84.3428585928314,87.9058835970077" />
+          Id="Package\Extract Staging_Nutrition Stage 1\Extract FD_GROUP"
+          TopLeft="490.857146039301,87.3411762818335" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Extract Staging_Nutrition Stage 1\Data Conversion"
           TopLeft="298.400000408718,196.800002771265" />
-        <NodeLayout
-          Size="185.6,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 1\SQL Server FoodGroup"
-          TopLeft="476.000008106232,212.188235431394" />
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output1]"
-          TopLeft="766.400007288797,129.552940996296">
+          Id="Package\Extract Staging_Nutrition Stage 1.Paths[Sort Output1]"
+          TopLeft="178.514287173991,240.752943767561">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="26.399992711203,83.2470590037044"
+              EndConnector="-12.9142871739913,37.647056232439"
               Start="0,0"
-              End="26.399992711203,75.7470590037044">
+              End="-12.9142871739913,30.147056232439">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.6235295018522" />
+                    End="0,14.8235281162195" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.6235295018522"
-                    Point2="0,41.6235295018522"
-                    Point3="4,41.6235295018522" />
+                    Point1="0,14.8235281162195"
+                    Point2="0,18.8235281162195"
+                    Point3="-4,18.8235281162195" />
                   <mssgle:LineSegment
-                    End="22.399992711203,41.6235295018522" />
+                    End="-8.91428717399128,18.8235281162195" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.399992711203,41.6235295018522"
-                    Point2="26.399992711203,41.6235295018522"
-                    Point3="26.399992711203,45.6235295018522" />
+                    Point1="-8.91428717399128,18.8235281162195"
+                    Point2="-12.9142871739913,18.8235281162195"
+                    Point3="-12.9142871739913,22.8235281162195" />
                   <mssgle:LineSegment
-                    End="26.399992711203,75.7470590037044" />
+                    End="-12.9142871739913,30.147056232439" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output]"
-          TopLeft="571.828577072766,128.941176281833">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,83.2470591495604"
-              Start="0,0"
-              End="0,75.7470591495604">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,75.7470591495604" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 1.Paths[Data Conversion Output]"
-          TopLeft="377.371431271884,238.400002771265">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,83.2470591495608"
-              Start="0,0"
-              End="0,75.7470591495608">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,75.7470591495608" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9709,11 +9671,73 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output3]"
+          TopLeft="766.400007288797,129.552940996296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.399992711203,83.2470590037044"
+              Start="0,0"
+              End="26.399992711203,75.7470590037044">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.6235295018522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.6235295018522"
+                    Point2="0,41.6235295018522"
+                    Point3="4,41.6235295018522" />
+                  <mssgle:LineSegment
+                    End="22.399992711203,41.6235295018522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.399992711203,41.6235295018522"
+                    Point2="26.399992711203,41.6235295018522"
+                    Point3="26.399992711203,45.6235295018522" />
+                  <mssgle:LineSegment
+                    End="26.399992711203,75.7470590037044" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output2]"
+          TopLeft="571.828577072766,128.941176281833">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.2470591495604"
+              Start="0,0"
+              End="0,75.7470591495604">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.7470591495604" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output1]"
           TopLeft="167.542858592831,129.505883597008">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9743,11 +9767,13 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output2]"
+          Id="Package\Extract Staging_Nutrition Stage 1.Paths[OLE DB Source Output]"
           TopLeft="374.742859818984,130.164705710758">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9765,49 +9791,37 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 1\Year Conversion"
-          TopLeft="88,278.4" />
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 1.Paths[Sort Output1]"
-          TopLeft="178.514287173991,240.752943767561">
+          Id="Package\Extract Staging_Nutrition Stage 1.Paths[Data Conversion Output1]"
+          TopLeft="377.371431271884,238.400002771265">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.9142871739913,37.647056232439"
+              EndConnector="0,83.2470591495608"
               Start="0,0"
-              End="-12.9142871739913,30.147056232439">
+              End="0,75.7470591495608">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.8235281162195" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.8235281162195"
-                    Point2="0,18.8235281162195"
-                    Point3="-4,18.8235281162195" />
-                  <mssgle:LineSegment
-                    End="-8.91428717399128,18.8235281162195" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.91428717399128,18.8235281162195"
-                    Point2="-12.9142871739913,18.8235281162195"
-                    Point3="-12.9142871739913,22.8235281162195" />
-                  <mssgle:LineSegment
-                    End="-12.9142871739913,30.147056232439" />
+                    End="0,75.7470591495608" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 1.Paths[Data Conversion Output1]"
+          Id="Package\Extract Staging_Nutrition Stage 1.Paths[Data Conversion Output]"
           TopLeft="167.600000647136,320">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9825,7 +9839,9 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9841,14 +9857,6 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Extract Staging_Nutrition Stage 1\SQL Server Footnote">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -9874,7 +9882,7 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Extract Staging_Nutrition Stage 1\SQL Server Nutrient">
+    design-time-name="Package\Extract Staging_Nutrition Stage 1\SQL Server Footnote">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9909,6 +9917,14 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Extract Staging_Nutrition Stage 1\SQL Server FoodGroup">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition Stage 1\SQL Server Nutrient">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9966,30 +9982,6 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 2.Paths[Lookup Match Output1]"
-          TopLeft="210,260">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77.6"
-              Start="0,0"
-              End="0,70.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,70.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,29.2453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 2.Paths[Lookup Match Output]"
           TopLeft="208.057145869002,379.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10009,6 +10001,30 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-48.19138671875,16.562961030254,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 2.Paths[Lookup Match Output]"
+          TopLeft="210,260">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.6"
+              Start="0,0"
+              End="0,70.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,29.2453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10185,102 +10201,90 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
           TopLeft="425.828572781232,446.635297060506" />
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output2]"
-          TopLeft="210.857145869002,488">
+          TopLeft="781.514286390616,401.835297060508">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69.0352970605079"
+              EndConnector="0,69.3647029394918"
               Start="0,0"
-              End="0,61.5352970605079">
+              End="0,61.8647029394918">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.5352970605079" />
+                    End="0,61.8647029394918" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,24.962961030254,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,25.1276639697459,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output1]"
-          TopLeft="196.8,394.4">
+          TopLeft="508.228572781232,488.235297060506">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.6,52"
+              EndConnector="0,47.9999999999998"
               Start="0,0"
-              End="13.6,44.5">
+              End="0,40.4999999999998">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="4,26" />
-                  <mssgle:LineSegment
-                    End="9.59999999999997,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9.59999999999997,26"
-                    Point2="13.6,26"
-                    Point3="13.6,30" />
-                  <mssgle:LineSegment
-                    End="13.6,44.5" />
+                    End="0,40.4999999999998" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-41.39138671875,31,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,14.4453124999999,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output]"
-          TopLeft="509.028572781232,277.035297060508">
+          TopLeft="783.428572781232,276.235297060508">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,80.8000000000001"
+              EndConnector="0,83.9999999999999"
               Start="0,0"
-              End="0,73.3000000000001">
+              End="0,76.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.3000000000001" />
+                    End="0,76.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,30.8453125,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,32.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Derived Column Output2]"
-          TopLeft="781.914286390616,512.8">
+          TopLeft="509.028572781232,650.635297060506">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,130.635297060508"
+              EndConnector="0,36.800000000002"
               Start="0,0"
-              End="0,123.135297060508">
+              End="0,29.300000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,123.135297060508" />
+                    End="0,29.300000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10317,18 +10321,18 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Derived Column Output]"
-          TopLeft="509.028572781232,650.635297060506">
+          TopLeft="781.914286390616,512.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.800000000002"
+              EndConnector="0,130.635297060508"
               Start="0,0"
-              End="0,29.300000000002">
+              End="0,123.135297060508">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.300000000002" />
+                    End="0,123.135297060508" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10341,18 +10345,18 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[OLE DB Source Output2]"
-          TopLeft="783.428572781232,156.235297060508">
+          TopLeft="512.228572781233,159.435297060508">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,78.4"
+              EndConnector="0,76"
               Start="0,0"
-              End="0,70.9">
+              End="0,68.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.9" />
+                    End="0,68.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10389,18 +10393,18 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[OLE DB Source Output]"
-          TopLeft="512.228572781233,159.435297060508">
+          TopLeft="783.428572781232,156.235297060508">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76"
+              EndConnector="0,78.4"
               Start="0,0"
-              End="0,68.5">
+              End="0,70.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,68.5" />
+                    End="0,70.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10413,97 +10417,109 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output8]"
-          TopLeft="781.514286390616,401.835297060508">
+          TopLeft="210.857145869002,488">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69.3647029394918"
+              EndConnector="0,69.0352970605079"
               Start="0,0"
-              End="0,61.8647029394918">
+              End="0,61.5352970605079">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.8647029394918" />
+                    End="0,61.5352970605079" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,25.1276639697459,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,24.962961030254,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output7]"
-          TopLeft="507.428572781233,577.835297060506">
+          TopLeft="506.628572781232,399.435297060507">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.1999999999999"
+              EndConnector="0,47.1999999999999"
               Start="0,0"
-              End="0,23.6999999999999">
+              End="0,39.6999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.6999999999999" />
+                    End="0,39.6999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,6.04531249999995,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,14.0453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output6]"
-          TopLeft="783.428572781232,276.235297060508">
+          TopLeft="509.028572781232,277.035297060508">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,83.9999999999999"
+              EndConnector="0,80.8000000000001"
               Start="0,0"
-              End="0,76.4999999999999">
+              End="0,73.3000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,76.4999999999999" />
+                    End="0,73.3000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,32.4453125,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,30.8453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output5]"
-          TopLeft="508.228572781232,488.235297060506">
+          TopLeft="196.8,394.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.9999999999998"
+              EndConnector="13.6,52"
               Start="0,0"
-              End="0,40.4999999999998">
+              End="13.6,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.4999999999998" />
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="4,26" />
+                  <mssgle:LineSegment
+                    End="9.59999999999997,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.59999999999997,26"
+                    Point2="13.6,26"
+                    Point3="13.6,30" />
+                  <mssgle:LineSegment
+                    End="13.6,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.4453124999999,96.3827734375,11.609375"
+              BoundingBox="-41.39138671875,31,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10533,25 +10549,25 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Staging_Nutrition Stage 3.Paths[Lookup Match Output3]"
-          TopLeft="506.628572781232,399.435297060507">
+          TopLeft="507.428572781233,577.835297060506">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.1999999999999"
+              EndConnector="0,31.1999999999999"
               Start="0,0"
-              End="0,39.6999999999999">
+              End="0,23.6999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.6999999999999" />
+                    End="0,23.6999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.0453125,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,6.04531249999995,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10811,9 +10827,9 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="275.2,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 4\SQL Server FoodNutrientDataSourceCross"
-          TopLeft="360.685715687032,1040.09412160519" />
+          Size="262.4,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 4\SQL Server FoodNutrientFootnoteCross"
+          TopLeft="836.571442852215,1002.43193665464" />
         <NodeLayout
           Size="160,41.6"
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 2"
@@ -10823,37 +10839,29 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 2"
           TopLeft="893.571443192813,558.067229266535" />
         <NodeLayout
-          Size="168,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 4\Extract FOOTNOTE"
-          TopLeft="887.387769737327,230.941178858624" />
-        <NodeLayout
           Size="176,41.6"
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup Long_Desc 1"
           TopLeft="424.028572781232,327.670591592844" />
-        <NodeLayout
-          Size="262.4,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 4\SQL Server FoodNutrientFootnoteCross"
-          TopLeft="836.571442852215,1002.43193665464" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 2"
           TopLeft="893.571443192813,647.667229266535" />
         <NodeLayout
-          Size="248,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 4\Lookup Authors, Title, Journal, Year"
-          TopLeft="388.228572781232,806.870591592844" />
+          Size="168,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 4\Extract FOOTNOTE"
+          TopLeft="887.387769737327,230.941178858624" />
         <NodeLayout
           Size="224,41.6"
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 1"
           TopLeft="393.828572781232,713.270591592844" />
         <NodeLayout
+          Size="248,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 4\Lookup Authors, Title, Journal, Year"
+          TopLeft="388.228572781232,806.870591592844" />
+        <NodeLayout
           Size="176,41.6"
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup Long_Desc 2"
           TopLeft="882.342870411581,348.561345669527" />
-        <NodeLayout
-          Size="180.8,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 4\Lookup DataSourceID"
-          TopLeft="409.142858524712,965.694122188617" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 1"
@@ -10863,13 +10871,17 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup FoodNutrientCrossID 2"
           TopLeft="870,718" />
         <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 4\Lookup DataSourceID"
+          TopLeft="409.142858524712,965.694122188617" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 4\Year Conversion"
+          TopLeft="431.08571602763,885.223532054334" />
+        <NodeLayout
           Size="160,41.6"
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 1"
           TopLeft="425.028572781232,450.070591592843" />
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 4\Extract DATSRCLN"
-          TopLeft="431.510211449671,214.588236799663" />
         <NodeLayout
           Size="168,41.6"
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 1"
@@ -10878,8 +10890,16 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
           Size="169.6,41.6"
           Id="Package\Extract Staging_Nutrition Stage 4\Lookup FootnoteID"
           TopLeft="885.942870411581,806.361345669527" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 4\Extract DATSRCLN"
+          TopLeft="431.510211449671,214.588236799663" />
+        <NodeLayout
+          Size="275.2,41.6"
+          Id="Package\Extract Staging_Nutrition Stage 4\SQL Server FoodNutrientDataSourceCross"
+          TopLeft="360.685715687032,1040.09412160519" />
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[OLE DB Source Output1]"
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[OLE DB Source Output]"
           TopLeft="970.865320074454,272.541178858624">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10897,213 +10917,13 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[OLE DB Source Output]"
-          TopLeft="513.369392115451,256.188236799663">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71.482354793181"
-              Start="0,0"
-              End="0,63.982354793181">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.982354793181" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output11]"
-          TopLeft="982,759.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11.257129588419,46.761345669527"
-              Start="0,0"
-              End="-11.257129588419,39.261345669527">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.3806728347635" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.3806728347635"
-                    Point2="0,23.3806728347635"
-                    Point3="-4,23.3806728347635" />
-                  <mssgle:LineSegment
-                    End="-7.25712958841905,23.3806728347635" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.25712958841905,23.3806728347635"
-                    Point2="-11.257129588419,23.3806728347635"
-                    Point3="-11.257129588419,27.3806728347635" />
-                  <mssgle:LineSegment
-                    End="-11.257129588419,39.261345669527" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-53.8199515129595,28.3806728347635,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output10]"
-          TopLeft="981.385721596406,689.267229266535">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.732770733465"
-              Start="0,0"
-              End="0,21.232770733465">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.232770733465" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,4.8116978667325,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output9]"
-          TopLeft="509.028572781232,754.870591592844">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output8]"
-          TopLeft="498.914287105872,1007.29412218862">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.799999416576"
-              Start="0,0"
-              End="0,25.299999416576">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.299999416576" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,6.84531220828802,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output7]"
-          TopLeft="511.428572781232,580.470591592842">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output6]"
-          TopLeft="509.428572781232,670.070591592842">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.2000000000022"
-              Start="0,0"
-              End="0,35.7000000000022">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.7000000000022" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,12.0453125000011,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output5]"
-          TopLeft="507.428572781232,491.670591592843">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.199999999999"
-              Start="0,0"
-              End="0,39.699999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.699999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.0453124999995,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output4]"
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output12]"
           TopLeft="508.528572781232,369.270591592844">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11127,31 +10947,79 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output3]"
-          TopLeft="979.171443192813,599.667229266535">
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output11]"
+          TopLeft="507.428572781232,491.670591592843">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="0,47.199999999999"
               Start="0,0"
-              End="0,40.5">
+              End="0,39.699999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,39.699999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.4453125,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,14.0453124999995,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output2]"
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output10]"
+          TopLeft="509.428572781232,670.070591592842">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.2000000000022"
+              Start="0,0"
+              End="0,35.7000000000022">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.7000000000022" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,12.0453125000011,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output9]"
+          TopLeft="969.257156631898,847.961345669527">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,154.47059098511"
+              Start="0,0"
+              End="0,146.97059098511">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,146.97059098511" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,67.680607992555,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output8]"
           TopLeft="963.142870411581,509.361345669527">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11187,31 +11055,115 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output1]"
-          TopLeft="969.257156631898,847.961345669527">
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output7]"
+          TopLeft="979.171443192813,599.667229266535">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,154.47059098511"
+              EndConnector="0,48"
               Start="0,0"
-              End="0,146.97059098511">
+              End="0,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,146.97059098511" />
+                    End="0,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,67.680607992555,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,14.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output]"
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output6]"
+          TopLeft="511.428572781232,580.470591592842">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,14.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output5]"
+          TopLeft="982,759.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.257129588419,46.761345669527"
+              Start="0,0"
+              End="-11.257129588419,39.261345669527">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3806728347635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3806728347635"
+                    Point2="0,23.3806728347635"
+                    Point3="-4,23.3806728347635" />
+                  <mssgle:LineSegment
+                    End="-7.25712958841905,23.3806728347635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.25712958841905,23.3806728347635"
+                    Point2="-11.257129588419,23.3806728347635"
+                    Point3="-11.257129588419,27.3806728347635" />
+                  <mssgle:LineSegment
+                    End="-11.257129588419,39.261345669527" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-53.8199515129595,28.3806728347635,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output4]"
+          TopLeft="510.457144404431,848.470591592844">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.7529404614896"
+              Start="0,0"
+              End="0,29.2529404614896">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2529404614896" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.82178273074481,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output3]"
           TopLeft="966.742870411581,390.161345669527">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11234,31 +11186,75 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Extract Staging_Nutrition Stage 4\Year Conversion"
-          TopLeft="431.08571602763,885.223532054334" />
         <EdgeLayout
-          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output12]"
-          TopLeft="510.457144404431,848.470591592844">
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output2]"
+          TopLeft="498.914287105872,1007.29412218862">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.7529404614896"
+              EndConnector="0,32.799999416576"
               Start="0,0"
-              End="0,29.2529404614896">
+              End="0,25.299999416576">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.2529404614896" />
+                    End="0,25.299999416576" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.82178273074481,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,6.84531220828802,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output1]"
+          TopLeft="509.028572781232,754.870591592844">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,16.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[Lookup Match Output]"
+          TopLeft="981.385721596406,689.267229266535">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.732770733465"
+              Start="0,0"
+              End="0,21.232770733465">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.232770733465" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,4.8116978667325,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11293,20 +11289,38 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition Stage 4.Paths[OLE DB Source Output1]"
+          TopLeft="513.369392115451,256.188236799663">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.482354793181"
+              Start="0,0"
+              End="0,63.982354793181">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.982354793181" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Extract Staging_Nutrition Stage 4\SQL Server FoodNutrientDataSourceCross">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Extract Staging_Nutrition Stage 4\Lookup FoodID 2">
     <Properties>
@@ -11348,14 +11362,6 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         <Value
           type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Extract Staging_Nutrition Stage 4\Extract FOOTNOTE">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -11408,23 +11414,8 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Extract Staging_Nutrition Stage 4\Lookup Authors, Title, Journal, Year">
+    design-time-name="Package\Extract Staging_Nutrition Stage 4\Extract FOOTNOTE">
     <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DATA_SRC]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -11442,6 +11433,29 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[FoodNutrientCross]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition Stage 4\Lookup Authors, Title, Journal, Year">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DATA_SRC]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -11477,29 +11491,6 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Extract Staging_Nutrition Stage 4\Lookup DataSourceID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DataSource]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Extract Staging_Nutrition Stage 4\Lookup NutrientID 1">
     <Properties>
       <Property>
@@ -11528,12 +11519,35 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[FoodNutrientCross]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition Stage 4\Lookup DataSourceID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DataSource]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -11569,19 +11583,6 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Extract Staging_Nutrition Stage 4\Extract DATSRCLN">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Extract Staging_Nutrition Stage 4\Lookup NutrDesc 1">
     <Properties>
       <Property>
@@ -11599,6 +11600,27 @@ where [refTable].[Name] = ? and [refTable].[UnitOfMeasure] = ?</property>
         <Value
           type="q4:string">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition Stage 4\Extract DATSRCLN">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition Stage 4\SQL Server FoodNutrientDataSourceCross">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

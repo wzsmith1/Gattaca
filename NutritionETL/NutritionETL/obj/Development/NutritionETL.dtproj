@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">IDEA-PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAu39k6Y9bQEilFtevkAaFxgAAAAACAAAAAAAQZgAAAAEAACAAAAC37BB5g9HtyxXxai5pJFqsFvarldUjV5knVXkHpWvvlAAAAAAOgAAAAAIAACAAAABjd0xoeHEAr3fo5TboE7ENQHwMQox8FylATtNreyyjcZAAAABkIoFlN8Y1sT4gn54SvxPgZG7WZS0J0VVA0mxvBDJ9zJQe20wzi1PVqeK1S0gMeCiHGwWwJblVTLLLYh9P59UohBP6+1V2EVdsdOz6Qb1SiKEtlZU3jv4k0WVmyYsgcJp9+1eCMbWu4D0YtWKUfEpDK2UyDVNoRE3jmytbWKWbaGx41H8I4HjjgsyMnOboSHtAAAAABpPM4CWLr0xHYk+LhvuVkgur4c3YB5TMYE+vvrfawIDgiQ6jLPYkuBSBoDo3SdRfROxA8sqJG6ZLhJsMPZpFmg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAu39k6Y9bQEilFtevkAaFxgAAAAACAAAAAAAQZgAAAAEAACAAAAALkUY3dHLFph9bOXDi6jMT8AuDu2tKCzFJ1iYFY73arwAAAAAOgAAAAAIAACAAAAAq/fbVs9+N3zSroDZUyPZeazbfz0lvGNEtiLP2YdsTL5AAAABrHbCHX2ByvoOtGPlHdWmiEQlyhXjcVoKkswRGm/MWtHfKpENkKz+BqdTqzGPYQdbiTS/VXl33bMC1RrSaEJQZHHXE52c8zLYfcpbcKBw9g6b39BPrZLs0pZACgbINuxxVnpl7Fncmf08xnwuROI/6XiE9Nssq/iCN5m4zk6BuwIXQ7ZT2HNn2q2ZmEYeFalBAAAAAO6qN4G4YR0KJXKLn5VWXSUT/oDy3HLfshL2CiYufV4gULM3QIaSyUFVyTnCN6zjNN/jyfD53+LfsKFVBHX9Pfw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -195,7 +195,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\DATA_SRC.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\DATA_SRC.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -377,7 +377,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\FOOD_DES.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\FOOD_DES.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -558,7 +558,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\DATSRCLN.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\DATSRCLN.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -740,7 +740,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\DERIV_CD.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\DERIV_CD.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -922,7 +922,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\FD_GROUP.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\FD_GROUP.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1104,7 +1104,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\FOOTNOTE.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\FOOTNOTE.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1286,7 +1286,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\LANGDESC.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\LANGDESC.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1468,7 +1468,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\LANGUAL.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\LANGUAL.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1650,7 +1650,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\NUT_DATA.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\NUT_DATA.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1832,7 +1832,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\NUTR_DEF.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\NUTR_DEF.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -2014,7 +2014,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\SRC_CD.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\SRC_CD.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -2196,7 +2196,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Source\Data\sr27asc\WEIGHT.txt</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Source\Gattaca\DATA\sr27asc\WEIGHT.txt</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -2435,10 +2435,10 @@
                 <SSIS:Property SSIS:Name="Name">pkgLoadDB</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">50</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">52</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{04FF4CD0-A063-4617-A6AB-00DF00814408}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F1B37A44-7BBE-4D88-B04E-550D82B6C993}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

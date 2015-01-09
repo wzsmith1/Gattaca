@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x007E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Source\Data\sr27asc\DERIV_CD.txt">
+      DTS:ConnectionString="C:\Source\Gattaca\DATA\sr27asc\DERIV_CD.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Deriv_Cd"
-          DTS:DTSID="{D985C560-F6C5-4A31-A70A-719153A2CD04}"
+          DTS:DTSID="{5D3FAEAD-0CD9-4570-BDC9-5E98D58B8FC3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Deriv_Desc"
-          DTS:DTSID="{3FDFE705-7FD2-4961-97AA-B9A5EB361E50}"
+          DTS:DTSID="{F21749EC-6366-4447-9DA7-9BC4E7AA9F1D}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x007E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Source\Data\sr27asc\WEIGHT.txt">
+      DTS:ConnectionString="C:\Source\Gattaca\DATA\sr27asc\WEIGHT.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NDB_No"
-          DTS:DTSID="{25B23CA3-9618-4B4D-9253-4C3808F1E0BB}"
+          DTS:DTSID="{D31F37A3-4C09-4E32-8550-3D0DF7E759B7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Seq"
-          DTS:DTSID="{4C9B76B4-7659-4216-8702-FEED75498C83}"
+          DTS:DTSID="{959A3639-F948-4D7F-9677-BF5A44C26039}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataPrecision="18"
           DTS:TextQualified="True"
           DTS:ObjectName="Amount"
-          DTS:DTSID="{5837DBC4-1411-44FB-9C1C-6172BCB19C82}"
+          DTS:DTSID="{14024C49-C4BC-499E-B4AD-A972CAB81C61}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Msre_Desc"
-          DTS:DTSID="{2D10B1B4-52B4-4AD7-BD3F-436BC7F7F09A}"
+          DTS:DTSID="{A43CE601-34D1-4A53-B973-762EC86E29D9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataPrecision="18"
           DTS:TextQualified="True"
           DTS:ObjectName="Gm_Wgt"
-          DTS:DTSID="{05F66EDE-CD88-4BE4-A4DA-DA29CAFF39E6}"
+          DTS:DTSID="{BD7D6FE7-8941-4D67-AFE7-8ED623191B8F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -64,7 +64,7 @@
           DTS:DataType="20"
           DTS:TextQualified="True"
           DTS:ObjectName="Num_Data_Pts"
-          DTS:DTSID="{8BEEE08A-65E6-4469-B264-C9E5F8EA1E3E}"
+          DTS:DTSID="{07CEB2FC-21A0-4351-B4BB-54C220086FAE}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -73,7 +73,7 @@
           DTS:DataPrecision="18"
           DTS:TextQualified="True"
           DTS:ObjectName="Std_Dev"
-          DTS:DTSID="{772DA87F-5B3D-4209-AED5-BD768F40B2D4}"
+          DTS:DTSID="{A4603F3E-508F-4144-B00D-8AEA9A3B87BA}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

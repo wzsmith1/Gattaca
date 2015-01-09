@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x007E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Source\Data\sr27asc\SRC_CD.txt">
+      DTS:ConnectionString="C:\Source\Gattaca\DATA\sr27asc\SRC_CD.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Src_Cd"
-          DTS:DTSID="{F4CA730E-3712-4B7D-BECC-0D86B169C637}"
+          DTS:DTSID="{1E612DBA-23B2-4D5C-B5B1-1D26D4EDF8C0}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="SrcCd_Desc"
-          DTS:DTSID="{F418FA09-86B3-48FF-A446-01BD6428242C}"
+          DTS:DTSID="{20118F93-5B51-4B19-A662-5804D51BAE8F}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

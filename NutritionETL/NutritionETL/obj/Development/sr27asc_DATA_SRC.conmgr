@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x007E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Source\Data\sr27asc\DATA_SRC.txt">
+      DTS:ConnectionString="C:\Source\Gattaca\DATA\sr27asc\DATA_SRC.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="DataSrc_ID"
-          DTS:DTSID="{63A2BF8E-4D5F-4CFF-929E-3E97B4B6F729}"
+          DTS:DTSID="{745C292C-A429-4F78-A388-F119ADE7E6A2}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Authors"
-          DTS:DTSID="{C68B8AAB-0061-46A0-AC46-2D716E1A5B60}"
+          DTS:DTSID="{BD7B27D4-AE20-44A4-8BB5-3EBFD79B3BCA}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Title"
-          DTS:DTSID="{EB6FB0C1-FE3C-46EB-80ED-4301FB7E502A}"
+          DTS:DTSID="{C7632CD6-D36D-4C3D-9DAB-113B383974FA}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Year"
-          DTS:DTSID="{7E22D653-3F18-419A-BE02-D0BF0D421127}"
+          DTS:DTSID="{B3D60CC2-B2B7-488B-8D67-F39E864C9B30}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Journal"
-          DTS:DTSID="{9FC1F3E7-FC13-4742-8788-569D3EAC9451}"
+          DTS:DTSID="{3F977EE2-6C69-4E3D-B78E-23C74BE5E13F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Vol_City"
-          DTS:DTSID="{2474CEF9-CCA4-4E44-9E4A-47AA3C88BC9E}"
+          DTS:DTSID="{95FFC131-45AD-48DE-9E9F-D99E9960F326}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Issue_State"
-          DTS:DTSID="{EA7AF532-4AE5-4A7C-B8FE-535D855A3CC3}"
+          DTS:DTSID="{F1D01B1C-7A09-465D-B1B2-B2ED2CE4FFD7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -83,7 +83,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Start_Page"
-          DTS:DTSID="{A85C615C-3A2D-463D-94EB-1556557978E0}"
+          DTS:DTSID="{682E90F8-DF8C-4A3D-8F2E-3BD4ABAE27A9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -92,7 +92,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="End_Page"
-          DTS:DTSID="{5EF23777-812B-4D0A-BF46-4D30F6537639}"
+          DTS:DTSID="{2EFA0FED-303B-4356-BBA9-EDE24215DBCE}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

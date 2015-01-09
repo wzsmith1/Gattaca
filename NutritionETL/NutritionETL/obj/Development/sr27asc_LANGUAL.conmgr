@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x007E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Source\Data\sr27asc\LANGUAL.txt">
+      DTS:ConnectionString="C:\Source\Gattaca\DATA\sr27asc\LANGUAL.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NDB_No"
-          DTS:DTSID="{4DBB40DD-64B3-42E5-90ED-30D77FFE4E2A}"
+          DTS:DTSID="{7DCFAB2C-D261-4DB5-9160-7D5692FD48E5}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Factor_Code"
-          DTS:DTSID="{CD93CF42-9F1C-4454-B1A5-97C8B814DC42}"
+          DTS:DTSID="{08B2AA00-F45D-4219-A30B-6EF4A8ADA97E}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

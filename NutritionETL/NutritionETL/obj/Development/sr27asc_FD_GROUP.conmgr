@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x007E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Source\Data\sr27asc\FD_GROUP.txt">
+      DTS:ConnectionString="C:\Source\Gattaca\DATA\sr27asc\FD_GROUP.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FdGrp_Cd"
-          DTS:DTSID="{E54344F7-CEDB-442E-B62D-94AED4832BA8}"
+          DTS:DTSID="{B91E3F50-D5D3-42F1-B9BF-4E4909F2C47F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FdGrp_Desc"
-          DTS:DTSID="{E9F25FDE-8445-46F0-8E7A-39A5EDBABEF5}"
+          DTS:DTSID="{A0EEB0DD-5679-4561-AB82-0EC0B6B9570D}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

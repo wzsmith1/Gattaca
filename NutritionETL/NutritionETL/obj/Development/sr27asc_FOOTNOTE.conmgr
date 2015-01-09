@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x007E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Source\Data\sr27asc\FOOTNOTE.txt">
+      DTS:ConnectionString="C:\Source\Gattaca\DATA\sr27asc\FOOTNOTE.txt">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NDB_No"
-          DTS:DTSID="{DB6AB27D-FDDA-4ABD-860E-F14698AFC48B}"
+          DTS:DTSID="{272AFDA4-7872-46EE-8C36-75403EB7B185}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Footnt_No"
-          DTS:DTSID="{F298204D-805D-4520-B05E-36ED6031662A}"
+          DTS:DTSID="{E42C8B5F-5633-4EC0-8173-7E732D749E8C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Footnt_Typ"
-          DTS:DTSID="{A8344AC3-3B17-48F2-B36A-F98A84726F33}"
+          DTS:DTSID="{340CA4CB-EC09-40F8-A5C1-188E3C3C1F18}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Nutr_No"
-          DTS:DTSID="{2F9551C9-BB52-4D57-ADF2-04F56FBD4F33}"
+          DTS:DTSID="{DDBE1551-D3A0-44B2-B299-A63EA3E5D42E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Footnt_Txt"
-          DTS:DTSID="{8433C02D-3887-4386-842D-3FA460A549A3}"
+          DTS:DTSID="{4EB928D5-6053-4032-84C4-DD1EE9E2213A}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
