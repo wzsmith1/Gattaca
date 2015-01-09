@@ -1,0 +1,100 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sr27asc_DATA_SRC"
+  DTS:DTSID="{BBB4EC6F-CC38-4760-8E2B-56155A92BFE9}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x007E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Source\Data\sr27asc\DATA_SRC.txt">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="6"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DataSrc_ID"
+          DTS:DTSID="{63A2BF8E-4D5F-4CFF-929E-3E97B4B6F729}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="255"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Authors"
+          DTS:DTSID="{C68B8AAB-0061-46A0-AC46-2D716E1A5B60}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="255"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Title"
+          DTS:DTSID="{EB6FB0C1-FE3C-46EB-80ED-4301FB7E502A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="4"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Year"
+          DTS:DTSID="{7E22D653-3F18-419A-BE02-D0BF0D421127}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="135"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Journal"
+          DTS:DTSID="{9FC1F3E7-FC13-4742-8788-569D3EAC9451}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="16"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Vol_City"
+          DTS:DTSID="{2474CEF9-CCA4-4E44-9E4A-47AA3C88BC9E}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="5"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Issue_State"
+          DTS:DTSID="{EA7AF532-4AE5-4A7C-B8FE-535D855A3CC3}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="5"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Start_Page"
+          DTS:DTSID="{A85C615C-3A2D-463D-94EB-1556557978E0}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="5"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="End_Page"
+          DTS:DTSID="{5EF23777-812B-4D0A-BF46-4D30F6537639}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

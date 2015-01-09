@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sr27asc_FOOTNOTE"
+  DTS:DTSID="{658C04D2-12DA-4D62-8FB1-4E3534223B71}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x007E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Source\Data\sr27asc\FOOTNOTE.txt">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="5"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="NDB_No"
+          DTS:DTSID="{DB6AB27D-FDDA-4ABD-860E-F14698AFC48B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="4"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Footnt_No"
+          DTS:DTSID="{F298204D-805D-4520-B05E-36ED6031662A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="1"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Footnt_Typ"
+          DTS:DTSID="{A8344AC3-3B17-48F2-B36A-F98A84726F33}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="3"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Nutr_No"
+          DTS:DTSID="{2F9551C9-BB52-4D57-ADF2-04F56FBD4F33}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="200"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Footnt_Txt"
+          DTS:DTSID="{8433C02D-3887-4386-842D-3FA460A549A3}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

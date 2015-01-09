@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sr27asc_DATSRCLN"
+  DTS:DTSID="{8F3E9C1D-BB3B-4CF4-9C40-230DAA82A673}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x007E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Source\Data\sr27asc\DATSRCLN.txt">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="5"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="NDB_No"
+          DTS:DTSID="{5B345F5A-2FD1-4527-9052-0C29894555DD}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="3"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Nutr_No"
+          DTS:DTSID="{9F73275F-57E3-4767-B041-8208CF959806}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="6"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DataSrc_ID"
+          DTS:DTSID="{4C6DF292-36E2-42EB-B9E4-49D867DD01C0}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

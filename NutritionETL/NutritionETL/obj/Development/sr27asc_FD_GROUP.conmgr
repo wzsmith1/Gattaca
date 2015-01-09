@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sr27asc_FD_GROUP"
+  DTS:DTSID="{37BE5EC7-EABE-4C4E-9E34-6AFC12CDBE4C}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x007E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Source\Data\sr27asc\FD_GROUP.txt">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="4"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="FdGrp_Cd"
+          DTS:DTSID="{E54344F7-CEDB-442E-B62D-94AED4832BA8}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="60"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="FdGrp_Desc"
+          DTS:DTSID="{E9F25FDE-8445-46F0-8E7A-39A5EDBABEF5}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

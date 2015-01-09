@@ -1,0 +1,72 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sr27asc_NUTR_DEF"
+  DTS:DTSID="{FE4ADC8E-787F-48C5-918A-6F8B913F6EDA}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x007E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Source\Data\sr27asc\NUTR_DEF.txt">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="3"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Nutr_No"
+          DTS:DTSID="{010E6F9C-8152-4F4A-9769-8C07A0FAD564}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="7"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Units"
+          DTS:DTSID="{6C4545C5-C6F6-40EA-B73F-108E19DC00B4}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="20"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Tagname"
+          DTS:DTSID="{2FD8687E-16C6-4D09-9A81-5CFB100A017A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="60"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="NutrDesc"
+          DTS:DTSID="{47D9B141-D885-4BFE-B021-FF131CE64CC4}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x005E_"
+          DTS:MaximumWidth="1"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Num_Dec"
+          DTS:DTSID="{89E53BFC-5381-4EB8-96E8-DAF2D5C339D8}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="SR_Order"
+          DTS:DTSID="{F709AEFF-C7E1-4DEE-B858-E7FA8063A8A2}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

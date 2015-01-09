@@ -1,0 +1,3049 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/8/2014 7:54:44 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="IDEA-PC"
+  DTS:CreatorName="IDEA-PC\Zach"
+  DTS:DTSID="{520C854F-FE78-4901-A900-D99CEE9704E5}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{2BCC288B-9522-4FCB-B5F1-872CEE610F2A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extract Staging_Nutrition 1st Stage"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C7B384FB-35CA-4CB9-A442-5B9D54BE3FA0}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Staging_Nutrition 1st Stage"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion"
+              componentClassID="{62B1106C-7DB8-4EC8-ADD6-4C664DFFC54A}"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Num_Dec]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Num_Dec"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Num_Dec]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Converted Num_Dec]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Converted Num_Dec]"
+                      name="Converted Num_Dec"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Num_Dec]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract DATA_SRC"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DATA_SRC]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Connections[OleDbConnection]"
+                  connectionManagerID="{23B1E51C-F6B6-4E44-8CE8-61EA446E6C2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost Staging_Nutrition]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[DataSrc_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[DataSrc_ID]"
+                      length="6"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[DataSrc_ID]"
+                      name="DataSrc_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Authors]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Authors]"
+                      length="255"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Authors]"
+                      name="Authors"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      length="255"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Year]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      length="4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Journal]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Journal]"
+                      length="135"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Journal]"
+                      name="Journal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Vol_City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Vol_City]"
+                      length="16"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Vol_City]"
+                      name="Vol_City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Issue_State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Issue_State]"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Issue_State]"
+                      name="Issue_State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Start_Page]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Start_Page]"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Start_Page]"
+                      name="Start_Page"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[End_Page]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[End_Page]"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[End_Page]"
+                      name="End_Page"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[DataSrc_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="DataSrc_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Authors]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Authors" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Journal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="135"
+                      name="Journal" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Vol_City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="Vol_City" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Issue_State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Issue_State" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[Start_Page]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Start_Page" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].ExternalColumns[End_Page]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="End_Page" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[DataSrc_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[DataSrc_ID]"
+                      name="DataSrc_ID" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Authors]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Authors]"
+                      name="Authors" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Journal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="135"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Journal]"
+                      name="Journal" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Vol_City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Vol_City]"
+                      name="Vol_City" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Issue_State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Issue_State]"
+                      name="Issue_State" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Start_Page]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[Start_Page]"
+                      name="Start_Page" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[End_Page]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[End_Page]"
+                      name="End_Page" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract FD_GROUP"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FD_GROUP]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Connections[OleDbConnection]"
+                  connectionManagerID="{23B1E51C-F6B6-4E44-8CE8-61EA446E6C2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost Staging_Nutrition]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output].Columns[FdGrp_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output].ExternalColumns[FdGrp_Cd]"
+                      length="4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output].Columns[FdGrp_Cd]"
+                      name="FdGrp_Cd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output].Columns[FdGrp_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output].ExternalColumns[FdGrp_Desc]"
+                      length="60"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output].Columns[FdGrp_Desc]"
+                      name="FdGrp_Desc"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output].ExternalColumns[FdGrp_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="FdGrp_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output].ExternalColumns[FdGrp_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="FdGrp_Desc" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Error Output].Columns[FdGrp_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Error Output].Columns[FdGrp_Cd]"
+                      name="FdGrp_Cd" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Error Output].Columns[FdGrp_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Error Output].Columns[FdGrp_Desc]"
+                      name="FdGrp_Desc" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract FOOTNOTE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FOOTNOTE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Connections[OleDbConnection]"
+                  connectionManagerID="{23B1E51C-F6B6-4E44-8CE8-61EA446E6C2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost Staging_Nutrition]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[NDB_No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[NDB_No]"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[NDB_No]"
+                      name="NDB_No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[Footnt_No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[Footnt_No]"
+                      length="4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[Footnt_No]"
+                      name="Footnt_No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[Footnt_Typ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[Footnt_Typ]"
+                      length="1"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[Footnt_Typ]"
+                      name="Footnt_Typ"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[Nutr_No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[Nutr_No]"
+                      length="3"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[Nutr_No]"
+                      name="Nutr_No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[Footnt_Txt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[Footnt_Txt]"
+                      length="200"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[Footnt_Txt]"
+                      name="Footnt_Txt"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[NDB_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="NDB_No" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[Footnt_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Footnt_No" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[Footnt_Typ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Footnt_Typ" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[Nutr_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Nutr_No" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].ExternalColumns[Footnt_Txt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Footnt_Txt" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[NDB_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[NDB_No]"
+                      name="NDB_No" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[Footnt_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[Footnt_No]"
+                      name="Footnt_No" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[Footnt_Typ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[Footnt_Typ]"
+                      name="Footnt_Typ" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[Nutr_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[Nutr_No]"
+                      name="Nutr_No" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[Footnt_Txt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[Footnt_Txt]"
+                      name="Footnt_Txt" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract NUT_DATA"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[NUTR_DEF]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Connections[OleDbConnection]"
+                  connectionManagerID="{23B1E51C-F6B6-4E44-8CE8-61EA446E6C2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost Staging_Nutrition]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Nutr_No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[Nutr_No]"
+                      length="3"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Nutr_No]"
+                      name="Nutr_No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[Units]"
+                      length="7"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Units]"
+                      name="Units"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Tagname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[Tagname]"
+                      length="20"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Tagname]"
+                      name="Tagname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[NutrDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[NutrDesc]"
+                      length="60"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[NutrDesc]"
+                      name="NutrDesc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Num_Dec]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[Num_Dec]"
+                      length="1"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Num_Dec]"
+                      name="Num_Dec"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[SR_Order]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[SR_Order]"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[SR_Order]"
+                      name="SR_Order"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[Nutr_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Nutr_No" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="Units" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[Tagname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Tagname" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[NutrDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="NutrDesc" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[Num_Dec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Num_Dec" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].ExternalColumns[SR_Order]"
+                      dataType="i4"
+                      name="SR_Order" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[Nutr_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[Nutr_No]"
+                      name="Nutr_No" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[Units]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[Units]"
+                      name="Units" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[Tagname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[Tagname]"
+                      name="Tagname" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[NutrDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[NutrDesc]"
+                      name="NutrDesc" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[Num_Dec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[Num_Dec]"
+                      name="Num_Dec" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[SR_Order]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[SR_Order]"
+                      name="SR_Order" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource"
+              componentClassID="{F452EAF3-5EF0-43F1-8067-09DDF0BC6316}"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="SQL Server Destination"
+              name="SQL Server DataSource"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[DataSource]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
+                  name="BulkInsertCheckConstraints">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option."
+                  name="BulkInsertKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="BulkInsertKeepNulls">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option."
+                  name="BulkInsertTablock">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Connections[OleDbConnection]"
+                  connectionManagerID="{ED5E9C58-DCEB-4B0B-B8B0-21FF2B60C56B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost NutritionDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input]"
+                  hasSideEffects="true"
+                  name="SQL Server Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].Columns[Authors]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Authors"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].ExternalColumns[Authors]"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Authors]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].Columns[Title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].Columns[Journal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="135"
+                      cachedName="Journal"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].ExternalColumns[Journal]"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output].Columns[Journal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].ExternalColumns[DataSourceID]"
+                      dataType="i4"
+                      name="DataSourceID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].ExternalColumns[Authors]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Authors" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input].ExternalColumns[Journal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="135"
+                      name="Journal" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup"
+              componentClassID="{F452EAF3-5EF0-43F1-8067-09DDF0BC6316}"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="SQL Server Destination"
+              name="SQL Server FoodGroup"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[FoodGroup]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
+                  name="BulkInsertCheckConstraints">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option."
+                  name="BulkInsertKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="BulkInsertKeepNulls">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option."
+                  name="BulkInsertTablock">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup.Connections[OleDbConnection]"
+                  connectionManagerID="{ED5E9C58-DCEB-4B0B-B8B0-21FF2B60C56B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost NutritionDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup.Inputs[SQL Server Destination Input]"
+                  hasSideEffects="true"
+                  name="SQL Server Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup.Inputs[SQL Server Destination Input].Columns[FdGrp_Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="FdGrp_Desc"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup.Inputs[SQL Server Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output].Columns[FdGrp_Desc]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup.Inputs[SQL Server Destination Input].ExternalColumns[FoodGroupID]"
+                      dataType="i4"
+                      name="FoodGroupID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup.Inputs[SQL Server Destination Input].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote"
+              componentClassID="{F452EAF3-5EF0-43F1-8067-09DDF0BC6316}"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="SQL Server Destination"
+              name="SQL Server Footnote"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[Footnote]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
+                  name="BulkInsertCheckConstraints">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option."
+                  name="BulkInsertKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="BulkInsertKeepNulls">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option."
+                  name="BulkInsertTablock">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote.Connections[OleDbConnection]"
+                  connectionManagerID="{ED5E9C58-DCEB-4B0B-B8B0-21FF2B60C56B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost NutritionDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote.Inputs[SQL Server Destination Input]"
+                  hasSideEffects="true"
+                  name="SQL Server Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote.Inputs[SQL Server Destination Input].Columns[Footnt_Txt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Footnt_Txt"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote.Inputs[SQL Server Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output].Columns[Footnt_Txt]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote.Inputs[SQL Server Destination Input].ExternalColumns[FootnoteID]"
+                      dataType="i4"
+                      name="FootnoteID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote.Inputs[SQL Server Destination Input].ExternalColumns[Value]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient"
+              componentClassID="{F452EAF3-5EF0-43F1-8067-09DDF0BC6316}"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="SQL Server Destination"
+              name="SQL Server Nutrient"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[Nutrient]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
+                  name="BulkInsertCheckConstraints">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option."
+                  name="BulkInsertKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="BulkInsertKeepNulls">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option."
+                  name="BulkInsertTablock">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Connections[OleDbConnection]"
+                  connectionManagerID="{ED5E9C58-DCEB-4B0B-B8B0-21FF2B60C56B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost NutritionDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input]"
+                  hasSideEffects="true"
+                  name="SQL Server Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].Columns[NutrDesc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="NutrDesc"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[NutrDesc]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].Columns[Units]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="Units"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].ExternalColumns[UnitOfMeasure]"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output].Columns[Units]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].Columns[Converted Num_Dec]"
+                      cachedDataType="i4"
+                      cachedName="Converted Num_Dec"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].ExternalColumns[NumberOfDecimals]"
+                      lineageId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Converted Num_Dec]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].ExternalColumns[NutrientID]"
+                      dataType="i4"
+                      name="NutrientID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].ExternalColumns[UnitOfMeasure]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="UnitOfMeasure" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input].ExternalColumns[NumberOfDecimals]"
+                      dataType="i4"
+                      name="NumberOfDecimals" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Staging_Nutrition 1st Stage.Paths[Data Conversion Output]"
+              endId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient.Inputs[SQL Server Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition 1st Stage.Paths[OLE DB Source Output2]"
+              endId="Package\Extract Staging_Nutrition 1st Stage\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition 1st Stage.Paths[OLE DB Source Output3]"
+              endId="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource.Inputs[SQL Server Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition 1st Stage.Paths[OLE DB Source Output]"
+              endId="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote.Inputs[SQL Server Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition 1st Stage.Paths[OLE DB Source Output1]"
+              endId="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup.Inputs[SQL Server Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract Staging_Nutrition 2nd Stage"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{011988e0-92af-4898-bd40-863afb2ebeb5}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Staging_Nutrition 2nd Stage"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Extract FOOD_DESC"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FOOD_DES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Connections[OleDbConnection]"
+                  connectionManagerID="{23B1E51C-F6B6-4E44-8CE8-61EA446E6C2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost Staging_Nutrition]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[NDB_No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[NDB_No]"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[NDB_No]"
+                      name="NDB_No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[FdGrp_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[FdGrp_Cd]"
+                      length="4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[FdGrp_Cd]"
+                      name="FdGrp_Cd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Long_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Long_Desc]"
+                      length="200"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Long_Desc]"
+                      name="Long_Desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Shrt_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Shrt_Desc]"
+                      length="60"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Shrt_Desc]"
+                      name="Shrt_Desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[ComName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[ComName]"
+                      length="100"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[ComName]"
+                      name="ComName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[ManufacName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[ManufacName]"
+                      length="65"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[ManufacName]"
+                      name="ManufacName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Survey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Survey]"
+                      length="1"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Survey]"
+                      name="Survey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Ref_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Ref_desc]"
+                      length="135"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Ref_desc]"
+                      name="Ref_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Refuse]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Refuse]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Refuse]"
+                      name="Refuse"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[SciName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[SciName]"
+                      length="65"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[SciName]"
+                      name="SciName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[N_Factor]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[N_Factor]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[N_Factor]"
+                      name="N_Factor"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Pro_Factor]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Pro_Factor]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Pro_Factor]"
+                      name="Pro_Factor"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Fat_Factor]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Fat_Factor]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Fat_Factor]"
+                      name="Fat_Factor"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[CHO_Factor]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[CHO_Factor]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[CHO_Factor]"
+                      name="CHO_Factor"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[NDB_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="NDB_No" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[FdGrp_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="FdGrp_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Long_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Long_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Shrt_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="Shrt_Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[ComName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ComName" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[ManufacName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="65"
+                      name="ManufacName" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Survey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Survey" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Ref_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="135"
+                      name="Ref_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Refuse]"
+                      dataType="i4"
+                      name="Refuse" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[SciName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="65"
+                      name="SciName" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[N_Factor]"
+                      dataType="numeric"
+                      name="N_Factor"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Pro_Factor]"
+                      dataType="numeric"
+                      name="Pro_Factor"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[Fat_Factor]"
+                      dataType="numeric"
+                      name="Fat_Factor"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].ExternalColumns[CHO_Factor]"
+                      dataType="numeric"
+                      name="CHO_Factor"
+                      precision="4"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[NDB_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[NDB_No]"
+                      name="NDB_No" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[FdGrp_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[FdGrp_Cd]"
+                      name="FdGrp_Cd" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Long_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Long_Desc]"
+                      name="Long_Desc" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Shrt_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Shrt_Desc]"
+                      name="Shrt_Desc" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[ComName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[ComName]"
+                      name="ComName" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[ManufacName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="65"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[ManufacName]"
+                      name="ManufacName" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Survey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Survey]"
+                      name="Survey" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Ref_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="135"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Ref_desc]"
+                      name="Ref_desc" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Refuse]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Refuse]"
+                      name="Refuse" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[SciName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="65"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[SciName]"
+                      name="SciName" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[N_Factor]"
+                      dataType="numeric"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[N_Factor]"
+                      name="N_Factor"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Pro_Factor]"
+                      dataType="numeric"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Pro_Factor]"
+                      name="Pro_Factor"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Fat_Factor]"
+                      dataType="numeric"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[Fat_Factor]"
+                      name="Fat_Factor"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[CHO_Factor]"
+                      dataType="numeric"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[CHO_Factor]"
+                      name="CHO_Factor"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[FD_GROUP]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[FD_GROUP]) [refTable]
+where [refTable].[FdGrp_Cd] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FdGrp_Cd" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="FdGrp_Desc" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[FdGrp_Cd]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{23B1E51C-F6B6-4E44-8CE8-61EA446E6C2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost Staging_Nutrition]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Inputs[Lookup Input].Columns[FdGrp_Cd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="FdGrp_Cd"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[FdGrp_Cd]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">FdGrp_Cd</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Match Output].Columns[FdGrp_Desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="60"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Match Output].Columns[FdGrp_Desc]"
+                      name="FdGrp_Desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">FdGrp_Desc</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup 1"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[FoodGroup]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[FoodGroup]) [refTable]
+where [refTable].[Name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FoodGroupID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_STR" length="60" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Match Output].Columns[FdGrp_Desc]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Connections[OleDbConnection]"
+                  connectionManagerID="{ED5E9C58-DCEB-4B0B-B8B0-21FF2B60C56B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost NutritionDB]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Inputs[Lookup Input].Columns[FdGrp_Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="FdGrp_Desc"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Match Output].Columns[FdGrp_Desc]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Match Output].Columns[FoodGroupID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Match Output].Columns[FoodGroupID]"
+                      name="FoodGroupID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">FoodGroupID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food"
+              componentClassID="{F452EAF3-5EF0-43F1-8067-09DDF0BC6316}"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="SQL Server Destination"
+              name="SQL Server Food"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[Food]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
+                  name="BulkInsertCheckConstraints">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option."
+                  name="BulkInsertKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="BulkInsertKeepNulls">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option."
+                  name="BulkInsertTablock">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Connections[OleDbConnection]"
+                  connectionManagerID="{ED5E9C58-DCEB-4B0B-B8B0-21FF2B60C56B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost NutritionDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input]"
+                  hasSideEffects="true"
+                  name="SQL Server Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].Columns[FoodGroupID]"
+                      cachedDataType="i4"
+                      cachedName="FoodGroupID"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[FoodGroupID]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Match Output].Columns[FoodGroupID]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].Columns[Long_Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Long_Desc"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Long_Desc]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].Columns[Shrt_Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="Shrt_Desc"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[ShortName]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Shrt_Desc]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].Columns[ManufacName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="65"
+                      cachedName="ManufacName"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[Manufacturer]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[ManufacName]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].Columns[Survey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Survey"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[HasCompleteProfile]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Survey]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].Columns[Refuse]"
+                      cachedDataType="i4"
+                      cachedName="Refuse"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[RefusePercent]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Refuse]" />
+                    <inputColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].Columns[Ref_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="135"
+                      cachedName="Ref_desc"
+                      externalMetadataColumnId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[RefuseDescription]"
+                      lineageId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output].Columns[Ref_desc]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[FoodID]"
+                      dataType="i4"
+                      name="FoodID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[FoodGroupID]"
+                      dataType="i4"
+                      name="FoodGroupID" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[ShortName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="ShortName" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[Manufacturer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="65"
+                      name="Manufacturer" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[HasCompleteProfile]"
+                      dataType="bool"
+                      name="HasCompleteProfile" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[RefusePercent]"
+                      dataType="numeric"
+                      name="RefusePercent"
+                      precision="3"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food.Inputs[SQL Server Destination Input].ExternalColumns[RefuseDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="135"
+                      name="RefuseDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Staging_Nutrition 2nd Stage.Paths[Lookup Match Output1]"
+              endId="Package\Extract Staging_Nutrition 2nd Stage\Derived Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition 2nd Stage.Paths[Lookup Match Output]"
+              endId="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Extract Staging_Nutrition 2nd Stage.Paths[OLE DB Source Output]"
+              endId="Package\Extract Staging_Nutrition 2nd Stage\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate NutritionDB"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d1dd85c8-85f0-4d9f-be62-2579dd8f6fce}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate NutritionDB"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{ED5E9C58-DCEB-4B0B-B8B0-21FF2B60C56B}"
+          SQLTask:SqlStatementSource="DELETE FROM FoodNutrientDataSourceCross;&#xA;DBCC CHECKIDENT ('FoodNutrientDataSourceCross',RESEED, 0);&#xA;DELETE FROM FoodFootnoteCross;&#xA;DBCC CHECKIDENT ('FoodFootnoteCross',RESEED, 0);&#xA;&#xA;DELETE FROM FoodFootnoteCross;&#xA;DBCC CHECKIDENT ('FoodFootnoteCross',RESEED, 0);&#xA;DELETE FROM FoodNutrientCross;&#xA;DBCC CHECKIDENT ('FoodNutrientCross',RESEED, 0);&#xA;DELETE FROM FoodWeight;&#xA;DBCC CHECKIDENT ('FoodWeight',RESEED, 0);&#xA;&#xA;DELETE FROM Food;&#xA;DBCC CHECKIDENT ('Food',RESEED, 0);&#xA;&#xA;DELETE FROM DataSource;&#xA;DBCC CHECKIDENT ('DataSource',RESEED, 0);&#xA;DELETE FROM FoodGroup;&#xA;DBCC CHECKIDENT ('FoodGroup',RESEED, 0);&#xA;DELETE FROM Footnote;&#xA;DBCC CHECKIDENT ('Footnote',RESEED, 0);&#xA;DELETE FROM Nutrient;&#xA;DBCC CHECKIDENT ('Nutrient',RESEED, 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{10B22180-B5A7-4953-A92C-5C240EE4A188}"
+      DTS:From="Package\Truncate NutritionDB"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extract Staging_Nutrition 1st Stage" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{150D5F54-9CB2-4131-BBA0-96ABDB65A3A6}"
+      DTS:From="Package\Extract Staging_Nutrition 1st Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Extract Staging_Nutrition 2nd Stage" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage"
+          TopLeft="31.2000005449568,167.435296477084" />
+        <NodeLayout
+          Size="248,41.6"
+          Id="Package\Extract Staging_Nutrition 2nd Stage"
+          TopLeft="31.2000005449568,269.035296477084" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Truncate NutritionDB"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="151.200000272478,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.8352964770839"
+              Start="0,0"
+              End="0,58.3352964770839">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.3352964770839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="154.400000544957,209.035296477084">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Extract Staging_Nutrition 1st Stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient"
+          TopLeft="292.34286213505,321.647061920826" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC"
+          TopLeft="84.3428585928314,87.9058835970077" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote"
+          TopLeft="699.314291056808,211.62352811622" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup"
+          TopLeft="476.000008106232,212.188235431394" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE"
+          TopLeft="682.400007288797,87.9529409962956" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource"
+          TopLeft="78.628572781232,209.035297060508" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA"
+          TopLeft="289.485719229251,88.5647057107577" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage\Data Conversion"
+          TopLeft="298.400000408718,196.800002771265" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP"
+          TopLeft="490.857146039301,87.3411762818335" />
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition 1st Stage.Paths[OLE DB Source Output1]"
+          TopLeft="571.828577072766,128.941176281833">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.2470591495604"
+              Start="0,0"
+              End="0,75.7470591495604">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.7470591495604" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition 1st Stage.Paths[OLE DB Source Output]"
+          TopLeft="766.400007288797,129.552940996296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.9142837680116,82.070587119924"
+              Start="0,0"
+              End="20.9142837680116,74.570587119924">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.035293559962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.035293559962"
+                    Point2="0,41.035293559962"
+                    Point3="4,41.035293559962" />
+                  <mssgle:LineSegment
+                    End="16.9142837680116,41.035293559962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.9142837680116,41.035293559962"
+                    Point2="20.9142837680116,41.035293559962"
+                    Point3="20.9142837680116,45.035293559962" />
+                  <mssgle:LineSegment
+                    End="20.9142837680116,74.570587119924" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition 1st Stage.Paths[OLE DB Source Output3]"
+          TopLeft="170.285715687032,129.505883597008">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79.5294134635001"
+              Start="0,0"
+              End="0,72.0294134635001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.0294134635001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition 1st Stage.Paths[OLE DB Source Output2]"
+          TopLeft="374.742859818984,130.164705710758">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.6352970605077"
+              Start="0,0"
+              End="0,59.1352970605077">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.1352970605077" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition 1st Stage.Paths[Data Conversion Output]"
+          TopLeft="377.371431271884,238.400002771265">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.2470591495608"
+              Start="0,0"
+              End="0,75.7470591495608">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.7470591495608" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 1st Stage\SQL Server Nutrient">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 1st Stage\Extract DATA_SRC">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 1st Stage\SQL Server Footnote">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 1st Stage\SQL Server FoodGroup">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 1st Stage\Extract FOOTNOTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 1st Stage\SQL Server DataSource">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 1st Stage\Extract NUT_DATA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 1st Stage\Extract FD_GROUP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Extract Staging_Nutrition 2nd Stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="113.6,41.6"
+          Id="Package\Extract Staging_Nutrition 2nd Stage\Lookup"
+          TopLeft="116,218.4" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food"
+          TopLeft="97.028572781232,452.235297060508" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC"
+          TopLeft="84.3428585928314,87.9058835970077" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1"
+          TopLeft="108,324.8" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Extract Staging_Nutrition 2nd Stage\Derived Column"
+          TopLeft="334.4,395.2" />
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition 2nd Stage.Paths[OLE DB Source Output]"
+          TopLeft="172.171429296416,129.505883597008">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,88.8941164029923"
+              Start="0,0"
+              End="0,81.3941164029923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.3941164029923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition 2nd Stage.Paths[Lookup Match Output]"
+          TopLeft="170.8,260">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.8"
+              Start="0,0"
+              End="0,57.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,22.8453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Staging_Nutrition 2nd Stage.Paths[Lookup Match Output1]"
+          TopLeft="168.8,366.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="242.4,28.8"
+              Start="0,0"
+              End="242.4,21.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.4"
+                    Point2="0,14.4"
+                    Point3="4,14.4" />
+                  <mssgle:LineSegment
+                    End="238.4,14.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="238.4,14.4"
+                    Point2="242.4,14.4"
+                    Point3="242.4,18.4" />
+                  <mssgle:LineSegment
+                    End="242.4,21.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="73.00861328125,19.4,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 2nd Stage\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[FoodGroup]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 2nd Stage\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[FD_GROUP]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 2nd Stage\SQL Server Food">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Staging_Nutrition 2nd Stage\Extract FOOD_DESC">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
