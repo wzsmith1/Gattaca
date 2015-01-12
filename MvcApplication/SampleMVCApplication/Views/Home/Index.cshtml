@@ -1,0 +1,46 @@
+﻿@model MvcApplication.Models.SampleData
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container theme-showcase" role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>Index Page</h1>
+        <p>This page contains content for the Index Page.</p>
+        @*<p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>*@
+    </div>
+
+    <div class="page-header">
+        <h1>ViewBag Data</h1>
+    </div>
+    <p>
+        @ViewBag.SampleText
+    </p>
+       
+    <div class="page-header">
+        <h1>Model Data</h1>
+    </div>
+    <p>
+        ID: @Model.id<br />
+        Name: @Model.name<br />
+        Location: @Model.location<br />
+    </p>
+    <p>
+        <button type="button" class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-tree-conifer"></span> I am a tree
+        </button>
+        <button type="button" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-remove"></span> I am not a tree
+        </button>
+    </p>
+    <div class="alert alert-success" style="display:none">You are a tree</div>
+    <div class="alert alert-danger" style="display:none">You are not a tree</div>
+
+</div>
+<!-- /container -->
+
+@section scripts{
+    @Scripts.Render("~/bundles/home")
+}
