@@ -13,11 +13,12 @@ namespace MvcApplication.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NutritionDBEntities : DbContext
+    public partial class NutritionContext : DbContext
     {
-        public NutritionDBEntities()
+        public NutritionContext()
             : base("name=NutritionDBEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

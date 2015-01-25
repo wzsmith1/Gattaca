@@ -10,11 +10,11 @@ namespace MvcApplication.Controllers
 {
     public class HomeController : Controller
     {
-        private IFoodRepository foodRepository;
+        private INutritionRepository _repo;
 
         public HomeController()
         {
-            this.foodRepository = new FoodRepository(new NutritionContext());
+            this._repo = new NutritionRepository(new NutritionContext());
         }
 
         //
@@ -39,8 +39,10 @@ namespace MvcApplication.Controllers
 
         public ActionResult Index2()
         {
-            var foods = from f in foodRepository.GetFoods()
-                        select f;
+            string searchTerm = "Cranberry";
+            var foods = _repo.GetFoodsBySearchTerm(searchTerm)
+                .OrderBy(f => f.Name)
+                .Take(25);
             return View(foods);
         }
 

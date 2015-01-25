@@ -5,11 +5,11 @@ using System.Web;
 
 namespace MvcApplication.DAL
 {
-    public class FoodRepository : IFoodRepository, IDisposable
+    public class NutritionRepository : INutritionRepository, IDisposable
     {
         private NutritionContext context;
 
-        public FoodRepository(NutritionContext context)
+        public NutritionRepository(NutritionContext context)
         {
             this.context = context;
         }
@@ -21,7 +21,7 @@ namespace MvcApplication.DAL
 
         public IQueryable<Food> GetFoodsBySearchTerm(string searchTerm)
         {
-            return context.Foods.Where(f => f.Name == searchTerm);
+            return context.Foods.Where(f => f.Name.Contains(searchTerm));
         }
 
         public Food GetFoodByID(int id)

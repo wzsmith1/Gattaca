@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MvcApplication.DAL
 {
-    interface IFoodRepository
+    interface INutritionRepository
     {
         IQueryable<Food> GetFoods();
         IQueryable<Food> GetFoodsBySearchTerm(string searchTerm);
