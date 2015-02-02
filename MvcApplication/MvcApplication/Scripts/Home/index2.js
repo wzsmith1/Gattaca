@@ -5,8 +5,6 @@ function foodController($scope, $http)
     $scope.sample2 = "Sample 2";
 
     $scope.dataSingle;
-    $scope.dataMultiple = [];
-
     $http.get("/api/Food/GetFood/10")
         .then(function (result) {
             //Successful
