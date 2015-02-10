@@ -3,6 +3,8 @@ function foodController($scope, $http)
 {
     $scope.sample1 = "Sample 1";
     $scope.sample2 = "Sample 2";
+    $scope.isBusy = true;
+    $scope.foodInput = {};
 
     $scope.dataSingle;
     $http.get("/api/Food/GetFood/10")
@@ -27,7 +29,17 @@ function foodController($scope, $http)
             alert("failure")
         });
 
-
+    $scope.save = function () {
+        $http.get("/api/Food/GetFoods/" + $scope.foodInput.Value)
+            .then(function (result) {
+                //Successful
+                angular.copy(result.data, $scope.dataMultiple);
+            },
+        function () {
+            //Failure
+            alert("failure")
+        });
+    }
 
     //$scope.data = [
     //    {

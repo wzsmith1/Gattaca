@@ -41,6 +41,11 @@
         Sample 2: <input type="text" data-ng-model="sample2"><br>
         <p>Angular1: {{sample1}}</p>
         <p>Angular2: {{sample2}}</p>
+        <form name="foodInput" novalidate data-ng-submit="save()">
+            Enter Food Name: <input type="text" data-ng-model="foodInput.Value" />
+            <input type="submit" class="btn" value="Search" />
+        </form>
+        <p data-ng-model="foodInput.Value"></p>
         <div style="border:1px solid black">
             <h2>Angular Data Single</h2>
             <p>Data Count: {{dataSingle.length}}</p>
@@ -49,6 +54,7 @@
                 <li>{{dataSingle.Name}}</li>
             </ul>
         </div>
+        <div class="progress progress-striped active" data-ng-show="isBusy"></div>
         <div style="border:1px solid black">
             <h2>Angular Data Multiple</h2>
             <p>Data Count: {{dataMultiple.length}}</p>
