@@ -49,9 +49,3 @@ C:\Source\Gattaca\MvcApplication\MvcApplication\bin\System.Web.WebPages.Razor.xm
 C:\Source\Gattaca\MvcApplication\MvcApplication\obj\Debug\SampleMVCApplication.dll
 C:\Source\Gattaca\MvcApplication\MvcApplication\obj\Debug\SampleMVCApplication.pdb
 C:\Source\Gattaca\MvcApplication\MvcApplication\obj\Debug\MvcApplication.csprojResolveAssemblyReference.cache
-C:\Source\Gattaca\MvcApplication\MvcApplication\bin\System.Net.Http.Formatting.dll
-C:\Source\Gattaca\MvcApplication\MvcApplication\bin\System.Web.Http.dll
-C:\Source\Gattaca\MvcApplication\MvcApplication\bin\System.Web.Http.WebHost.dll
-C:\Source\Gattaca\MvcApplication\MvcApplication\bin\System.Net.Http.Formatting.xml
-C:\Source\Gattaca\MvcApplication\MvcApplication\bin\System.Web.Http.xml
-C:\Source\Gattaca\MvcApplication\MvcApplication\bin\System.Web.Http.WebHost.xml
