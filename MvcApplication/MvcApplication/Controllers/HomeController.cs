@@ -39,7 +39,6 @@ namespace MvcApplication.Controllers
 
         public ActionResult Index2()
         {
-            var x = 0;
             string searchTerm = "Cranberry";
             var foods = _repo.GetFoodsBySearchTerm(searchTerm)
                 .OrderBy(f => f.Name)
