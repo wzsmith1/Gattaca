@@ -23,7 +23,7 @@ namespace MvcApplication.Controllers
         {
             var foods = _repo.GetFoodsBySearchTerm(searchTerm)
                 .OrderBy(f => f.Name)
-                .Take(25);
+                .Take(5);
             return foods;
         }
 

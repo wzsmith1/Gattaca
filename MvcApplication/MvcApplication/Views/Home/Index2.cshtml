@@ -19,33 +19,29 @@
     </div>
 
     <div class="page-header">
-        <h1>ViewBag Data</h1>
+        <h1>Food Data</h1>
     </div>
-    <p>
-        @ViewBag.SampleText
-    </p>
-    <div class="page-header">
-        <h1>Model Data</h1>
-    </div>
-    <h1>Food Data</h1>
-    <input type="text" />
-    <input type="button" />
-    <ul>
-        <li><a href="~/api/Food/GetFoods/Cranberry">Get Cranberry Foods</a></li>
-        <li><a href="~/api/Food/GetFood/10">Get Food with id of 10</a></li>
-    </ul>
 
     <div data-ng-controller="foodController">
-        <h1>Food Controller</h1>
-        Sample 1: <input type="text" data-ng-model="sample1"><br>
-        Sample 2: <input type="text" data-ng-model="sample2"><br>
-        <p>Angular1: {{sample1}}</p>
-        <p>Angular2: {{sample2}}</p>
-        <form name="foodInput" novalidate data-ng-submit="save()">
-            Enter Food Name: <input type="text" data-ng-model="foodInput.Value" />
-            <input type="submit" class="btn" value="Search" />
+        <h1>Angular Data</h1>
+        <form name="foodInput" novalidate data-ng-submit="submit()">
+        Enter Food Name: <input type="text" data-ng-model="foodInput.Value" data-ng-model="foodInput.Value" ng-change="change()" />
+        <input type="submit" class="btn" value="Search" />
         </form>
-        <p data-ng-model="foodInput.Value"></p>
+        <p class="test">{{foodInput.Value}}</p>
+
+        <div style="border:1px solid black">
+            <h2>Angular Data Multiple</h2>
+            <p>Data Count: {{dataMultiple.length}}</p>
+            <div data-ng-repeat="i in dataMultiple">
+                <ul>
+                    @*<li>{{i.FoodID}}</li>*@
+                    <li>{{i.Name}}</li>
+                </ul>
+                <hr />
+            </div>
+        </div>
+        <div class="progress progress-striped active" data-ng-show="isBusy"></div>
         <div style="border:1px solid black">
             <h2>Angular Data Single</h2>
             <p>Data Count: {{dataSingle.length}}</p>
@@ -54,28 +50,19 @@
                 <li>{{dataSingle.Name}}</li>
             </ul>
         </div>
-        <div class="progress progress-striped active" data-ng-show="isBusy"></div>
-        <div style="border:1px solid black">
-            <h2>Angular Data Multiple</h2>
-            <p>Data Count: {{dataMultiple.length}}</p>
-            <div data-ng-repeat="i in dataMultiple">
-                <ul>
-                    <li>{{i.FoodID}}</li>
-                    <li>{{i.Name}}</li>
-                </ul>
-                <hr />
-            </div>
-        </div>
 
     </div>
 
-    <table>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.ShortName</td>
-            </tr>
-        }
-    </table>
+    <div>
+        <h2>Looping through MVC Model</h2>
+        <table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.ShortName</td>
+                </tr>
+            }
+        </table>
+    </div>
 </div>
