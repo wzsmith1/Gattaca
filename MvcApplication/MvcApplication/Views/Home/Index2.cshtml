@@ -22,10 +22,30 @@
         <h1>Food Data</h1>
     </div>
 
+    <h1>Typeahead.js</h1>
+    <div id="typeahead">
+        <input class="typeahead" type="text" placeholder="States of USA">
+    </div>
+
+    <h1>JQuery</h1>
+    <form>
+        <div class="form-group">
+            <input type="text" id="input2" list="foodList2" />
+            <datalist id="foodList2"></datalist>
+            <p id="output2">(output 2)</p>
+        </div>
+    </form>
+
+    <h1>Angular</h1>
     <div data-ng-controller="foodController">
-        <h1>Angular Data</h1>
         <form name="foodInput" novalidate data-ng-submit="submit()">
-        Enter Food Name: <input type="text" data-ng-model="foodInput.Value" data-ng-model="foodInput.Value" ng-change="change()" />
+        @*Enter Food Name: <input type="text" data-ng-model="foodInput.Value" ng-change="change()" />*@
+        Enter Food Name: <input type="text" list="foodList" data-ng-model="foodInput.Value" ng-change="change()" />
+            <datalist id="foodList">
+                <select id="dummy">
+                    <option data-ng-repeat="i in dataMultiple" ng-click="click()" value="{{i.Name}}">{{i.Name}}</option>
+                </select>
+            </datalist>
         <input type="submit" class="btn" value="Search" />
         </form>
         <p class="test">{{foodInput.Value}}</p>
@@ -33,10 +53,10 @@
         <div style="border:1px solid black">
             <h2>Angular Data Multiple</h2>
             <p>Data Count: {{dataMultiple.length}}</p>
-            <div data-ng-repeat="i in dataMultiple">
+            <div>
                 <ul>
                     @*<li>{{i.FoodID}}</li>*@
-                    <li>{{i.Name}}</li>
+                    <li data-ng-repeat="i in dataMultiple">{{i.Name}}</li>
                 </ul>
                 <hr />
             </div>

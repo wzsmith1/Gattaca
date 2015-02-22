@@ -10,12 +10,18 @@ function foodController($scope, $http)
         $http.get("/api/Food/GetFoods/" + $scope.foodInput.Value)
             .then(function (result) {
                 //Successful
-                angular.copy(result.data, $scope.dataMultiple);
+                $scope.dataMultiple = {};
+                //angular.copy(result.data, $scope.dataMultiple);
+                $scope.dataMultiple = result.data;
             },
         function () {
             //Failure
             //alert("failure")
         });
+    }
+
+    $scope.click = function () {
+        alert("clicked");
     }
 
     $scope.submit = function () {

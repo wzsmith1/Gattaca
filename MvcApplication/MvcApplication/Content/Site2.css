@@ -2,4 +2,8 @@
   width: 100px;
   background: #888888;
 }
+#typeahead .empty-message {
+  padding: 5px 10px;
+  text-align: center;
+}
 /*# sourceMappingURL=Site2.css.map */

@@ -31,7 +31,8 @@ namespace MvcApplication
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/site.css",
-                        "~/Content/Default.css"));
+                        "~/Content/Default.css",
+                        "~/Content/Typeahead_edit.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -51,7 +52,9 @@ namespace MvcApplication
                         "~/Scripts/Home/home.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/index2").Include(
-                        "~/Scripts/Home/index2.js"));
+                        "~/Scripts/Home/index2.js",
+                        "~/Scripts/Home/autocomplete.js",
+                        "~/Scripts/typeahead-0.10.5.js"));
 
         }
     }

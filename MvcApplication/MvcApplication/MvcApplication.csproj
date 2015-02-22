@@ -256,6 +256,18 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\Typeahead_edit.css">
+      <DependentUpon>Typeahead_edit.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Typeahead_edit.min.css">
+      <DependentUpon>Typeahead_edit.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Typeahead.css">
+      <DependentUpon>Typeahead.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Typeahead.min.css">
+      <DependentUpon>Typeahead.css</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <None Include="Content\Site.less" />
     <Content Include="Content\Bootstrap\css\bootstrap-theme.css.map" />
@@ -279,6 +291,14 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NutritionModel.edmx</DependentUpon>
       <LastGenOutput>NutritionModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Content\Typeahead.less" />
+    <Content Include="Content\Typeahead.css.map">
+      <DependentUpon>Typeahead.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Typeahead_edit.less" />
+    <Content Include="Content\Typeahead_edit.css.map">
+      <DependentUpon>Typeahead_edit.css</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\dattaca.pubxml" />
     <Content Include="Scripts\Angular\angular-animate.js" />
@@ -318,6 +338,7 @@
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\Home\autocomplete.js" />
     <Content Include="Scripts\Home\home.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1092,6 +1113,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Scripts\typeahead-0.10.5.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
