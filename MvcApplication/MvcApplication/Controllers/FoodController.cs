@@ -15,7 +15,7 @@ namespace MvcApplication.Controllers
         private INutritionRepository _repo;
         public FoodController()
         {
-            this._repo = new NutritionRepository(new NutritionContext());
+            this._repo = new NutritionRepository(new NutritionDBEntities());
         }
 
         //public IEnumerable<Food> Get()
@@ -24,6 +24,14 @@ namespace MvcApplication.Controllers
             var foods = _repo.GetFoodsBySearchTerm(searchTerm)
                 .OrderBy(f => f.Name)
                 .Take(5);
+            return foods;
+        }
+
+        public IEnumerable<Lookup> GetLookup(string searchTerm)
+        {
+            var foods = _repo.GetLookup("Food", searchTerm)
+                .OrderBy(l => l.Name)
+                .Take(10);
             return foods;
         }
 

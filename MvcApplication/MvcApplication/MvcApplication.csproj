@@ -130,6 +130,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\Lookup.cs">
+      <DependentUpon>NutritionModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\NutritionRepository.cs" />
     <Compile Include="DAL\INutritionRepository.cs" />
     <Compile Include="DAL\UserContext.cs" />

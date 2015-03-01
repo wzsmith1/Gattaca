@@ -25,6 +25,7 @@
         <AssociationConnector Association="NutritionDBModel.FK_FoodNutrientDataSourceCross_FoodNutrientCross" ManuallyRouted="false" />
         <AssociationConnector Association="NutritionDBModel.FK_FoodNutrientFootnoteCross_FoodNutrientCross" ManuallyRouted="false" />
         <AssociationConnector Association="NutritionDBModel.FK_FoodNutrientFootnoteCross_Footnote" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NutritionDBModel.Lookup" Width="1.5" PointX="5.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -27,6 +27,12 @@ namespace MvcApplication
                 );
 
             config.Routes.MapHttpRoute(
+                name: "LookupApi",
+                routeTemplate: "api/Food/GetLookup/{searchTerm}",
+                defaults: new { controller = "Food", action = "GetLookup", searchTerm = RouteParameter.Optional }
+                );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }

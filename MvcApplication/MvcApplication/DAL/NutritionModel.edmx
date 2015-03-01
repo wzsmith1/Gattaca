@@ -88,6 +88,13 @@
           <Property Name="FootnoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Value" Type="varchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="Lookup">
+          <Key>
+            <PropertyRef Name="LookupID" />
+          </Key>
+          <Property Name="LookupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Nutrient">
           <Key>
             <PropertyRef Name="NutrientID" />
@@ -227,6 +234,7 @@
           <EntitySet Name="FoodNutrientFootnoteCross" EntityType="Self.FoodNutrientFootnoteCross" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FoodWeight" EntityType="Self.FoodWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Footnote" EntityType="Self.Footnote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lookup" EntityType="Self.Lookup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nutrient" EntityType="Self.Nutrient" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Food_FoodGroup" Association="Self.FK_Food_FoodGroup">
             <End Role="FoodGroup" EntitySet="FoodGroup" />
@@ -556,7 +564,15 @@
             <End Role="Footnote" EntitySet="Footnotes" />
             <End Role="FoodNutrientFootnoteCross" EntitySet="FoodNutrientFootnoteCrosses" />
           </AssociationSet>
+          <EntitySet Name="Lookups" EntityType="NutritionDBModel.Lookup" />
         </EntityContainer>
+        <EntityType Name="Lookup">
+          <Key>
+            <PropertyRef Name="LookupID" />
+          </Key>
+          <Property Name="LookupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -662,6 +678,14 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="UnitOfMeasure" ColumnName="UnitOfMeasure" />
                 <ScalarProperty Name="NumberOfDecimals" ColumnName="NumberOfDecimals" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lookups">
+            <EntityTypeMapping TypeName="NutritionDBModel.Lookup">
+              <MappingFragment StoreEntitySet="Lookup">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LookupID" ColumnName="LookupID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

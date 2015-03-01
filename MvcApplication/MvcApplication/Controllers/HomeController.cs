@@ -14,7 +14,7 @@ namespace MvcApplication.Controllers
 
         public HomeController()
         {
-            this._repo = new NutritionRepository(new NutritionContext());
+            this._repo = new NutritionRepository(new NutritionDBEntities());
         }
 
         //

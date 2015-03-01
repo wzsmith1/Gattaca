@@ -7,9 +7,9 @@ namespace MvcApplication.DAL
 {
     public class NutritionRepository : INutritionRepository, IDisposable
     {
-        private NutritionContext context;
+        private NutritionDBEntities context;
 
-        public NutritionRepository(NutritionContext context)
+        public NutritionRepository(NutritionDBEntities context)
         {
             this.context = context;
         }
@@ -22,6 +22,12 @@ namespace MvcApplication.DAL
         public IQueryable<Food> GetFoodsBySearchTerm(string searchTerm)
         {
             return context.Foods.Where(f => f.Name.Contains(searchTerm));
+        }
+
+        public IEnumerable<Lookup> GetLookup(string tableName, string searchTerm)
+        {
+            string sql = "SELECT TOP 100 " + tableName + "ID AS LookupID, Name FROM " + tableName + " WHERE Name LIKE '%" + searchTerm + "%'";
+            return context.Lookups.SqlQuery(sql).ToList();
         }
 
         public Food GetFoodByID(int id)

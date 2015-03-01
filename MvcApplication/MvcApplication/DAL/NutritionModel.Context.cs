@@ -13,12 +13,11 @@ namespace MvcApplication.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NutritionContext : DbContext
+    public partial class NutritionDBEntities : DbContext
     {
-        public NutritionContext()
+        public NutritionDBEntities()
             : base("name=NutritionDBEntities")
         {
-            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -36,5 +35,6 @@ namespace MvcApplication.DAL
         public DbSet<FoodWeight> FoodWeights { get; set; }
         public DbSet<Footnote> Footnotes { get; set; }
         public DbSet<Nutrient> Nutrients { get; set; }
+        public DbSet<Lookup> Lookups { get; set; }
     }
 }
