@@ -29,15 +29,22 @@ namespace MvcApplication.Controllers
 
         public IEnumerable<Lookup> GetLookup(string searchTerm)
         {
-            var foods = _repo.GetLookup("Food", searchTerm)
-                .OrderBy(l => l.Name)
-                .Take(10);
+            int numberOfRecords = 10;
+            var foods = _repo.GetLookup("Food", searchTerm, numberOfRecords);
+                //.OrderBy(l => l.Name)
+                //.Take(10);
             return foods;
         }
 
         public Food GetFood(int id)
         {
             var food = _repo.GetFoodByID(id);
+            return food;
+        }
+
+        public Food GetFoodByName(string foodName)
+        {
+            var food = _repo.GetFoodByName(foodName);
             return food;
         }
     }

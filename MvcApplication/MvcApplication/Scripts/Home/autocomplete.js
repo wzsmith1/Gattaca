@@ -104,6 +104,34 @@ $(document).ready(function () {
     });
 });
 
+//submission
+$(document).ready(function () {
+    $('#FoodForm').on('submit', function () {
+        var inputValue = $('#typeaheadValue').val();
+        //alert(inputValue);
+
+        var options = {};
+        options.url = "/api/Food/GetFoodByName/" + inputValue;
+        options.type = "GET";
+        options.datatype = "json";
+        options.success = function (data) {
+            jsonValue = JSON.stringify(data);
+            alert(data[0].Name);
+            //$("#returnValue").html("<p>" + data[0].Name + "</p>");
+        }
+        options.failure = function (data) {
+            alert("failure");
+        }
+        $.ajax(options);
+    });
+
+});
+
+
+
+
+
+
 
 
 
