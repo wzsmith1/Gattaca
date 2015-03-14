@@ -14,10 +14,16 @@ namespace MvcApplication
             //Don't know if this is a big deal when they're returned to Javascript or not
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
+            //config.Routes.MapHttpRoute(
+            //    name: "FoodApi",
+            //    routeTemplate: "api/Food/GetFood/{id}",
+            //    defaults: new { controller = "Food", action = "GetFood", id = RouteParameter.Optional }
+            //    );
+
             config.Routes.MapHttpRoute(
                 name: "FoodApi",
-                routeTemplate: "api/Food/GetFood/{id}",
-                defaults: new { controller = "Food", action = "GetFood", id = RouteParameter.Optional }
+                routeTemplate: "api/Food/GetFoodByName/{foodName}",
+                defaults: new { controller = "Food", action = "GetFoodByName", foodName = RouteParameter.Optional }
                 );
 
             config.Routes.MapHttpRoute(
